@@ -1,2 +1,2 @@
-# Tic-Tac-Toe-Game
+# Tic-Tak-Toe-Game
 A functional Tic Tac Toe game
