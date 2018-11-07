@@ -1,5 +1,5 @@
 //Varables
-String easy = "Easy", medium = "Medium", hard = "hard", exitButton = "Exit Game", player1 = "X =", player2 = "O =";
+String easy = "Easy", medium = "Medium", hard = "Hard", exitButton = "Exit Game", player1 = "X =", player2 = "O =", start = "Start", restart = "Restart";
 PFont levelFont, xoFont, playerFont, scoreFont;
 
 // Main divisions
