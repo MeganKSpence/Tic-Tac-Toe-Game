@@ -1,5 +1,5 @@
 //Varables
-String easy = "Easy", medium = "Medium", hard = "hard", exitButton = "Exit", player1 = "Player 1", player2 = "Player 2";
+String easy = "Easy", medium = "Medium", hard = "hard", exitButton = "Exit Game", player1 = "X =", player2 = "O =";
 PFont levelFont, xoFont, playerFont, scoreFont;
 
 // Main divisions
@@ -24,19 +24,7 @@ void draw () {
   
   GUI_Design();
 
-  println ("Mousex:", mouseX, "\tMouseY:", mouseY);
+  Quit_Button();
   
-  if (mouseX>width*2/3 && mouseX<width && mouseY>0 && mouseY<height*1/12) { //Hover Over
-    fill(hoverOverButton);
-    rect(width*2/3, height*0, width*3/3, height*1/12);
-  } else {
-    fill(regularButton);
-    rect(width*2/3, height*0, width*3/3, height*1/12);
-  }
  }
  
- void mouseClicked () {
-  if (mouseX>width*2/3 && mouseX<width && mouseY>0 && mouseY<height*1/12) {
-    exit();
-  }
-} 
