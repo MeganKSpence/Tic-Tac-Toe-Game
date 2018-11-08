@@ -22,7 +22,7 @@ void Quit_Button() {
     fill(255);
 }
 
-void mouseClicked () {
+void exitButtonMouseClicked () {
   if (mouseX>width*0 && mouseX<width*2/5 && mouseY>height*5/12 && mouseY<height*6/12) {
     exit();
   }

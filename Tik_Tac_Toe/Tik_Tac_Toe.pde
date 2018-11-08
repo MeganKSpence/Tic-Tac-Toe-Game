@@ -1,6 +1,9 @@
 //Varables
-String easy = "Easy", medium = "Medium", hard = "Hard", exitButton = "Exit Game", player1 = "X =", player2 = "O =", start = "Start", restart = "Restart";
+String easy = "Easy", medium = "Medium", hard = "Hard", exitButton = "Exit Game", player1 = "X =", player2 = "O =", start = "Start", restart = "Reset";
+int xWin = 0, oWin = 0, count = 0, position;
 PFont levelFont, xoFont, playerFont, scoreFont;
+Boolean printX = false, printO = false; //To signal Board Button, 1-9, has been been pressed
+Boolean[] noDraw = new Boolean[9]; //Turn off ablity to draw an X or an O in a sqaure of the board
 
 // Main divisions
 void setup () { 
@@ -23,8 +26,17 @@ void setup () {
 void draw () {
   
   GUI_Design();
-
   Quit_Button();
   
  }
+ 
+ void mouseClicked (){
+   
+   exitButtonMouseClicked();
+   xoButtonDraw();
+   
+ }
+ 
+
+ 
  
