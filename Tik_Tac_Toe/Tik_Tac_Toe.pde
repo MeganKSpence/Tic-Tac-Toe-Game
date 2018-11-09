@@ -13,8 +13,8 @@ void setup () {
   background(255);
   
   //finding all fonts on system
-  String[] fontList = PFont.list(); //Will list all of the available fonts on this specific system. Font's will vary per computer
-  printArray(fontList);
+ // String[] fontList = PFont.list(); //Will list all of the available fonts on this specific system. Font's will vary per computer
+ // printArray(fontList);
   
   //Load a Font
   levelFont = createFont ("Cambria", 55);
@@ -22,11 +22,16 @@ void setup () {
   playerFont = createFont ("Algerian", 55);
   scoreFont = createFont ("Calibri", 55);
   
+  for(int i=0; i < noDraw.length; i++) {
+    noDraw[i] = false;
+  }
+  
 }
 void draw () {
   
   GUI_Design();
   Quit_Button();
+  textDraw();
   
  }
  
@@ -34,6 +39,10 @@ void draw () {
    
    exitButtonMouseClicked();
    xoButtonDraw();
+   println(" Position:", position, "Count:", count);
+   for (int i = 0; i < noDraw.length; i++) {
+     print(" noDraw " + str(i) + ": " + str(noDraw[i]));
+   }
    
  }
  

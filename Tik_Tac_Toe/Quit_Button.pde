@@ -5,7 +5,7 @@ color hoverOverButton = white2;
 
 void Quit_Button() {
   
-  println ("Mousex:", mouseX, "\tMouseY:", mouseY);
+  //println ("Mousex:", mouseX, "\tMouseY:", mouseY);
   
   if (mouseX>width*0 && mouseX<width*2/5 && mouseY>height*5/12 && mouseY<height*6/12) { //Hover Over
     fill(hoverOverButton);
