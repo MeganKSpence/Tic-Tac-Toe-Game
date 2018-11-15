@@ -2,15 +2,24 @@ fullScreen();
 //size(500,600);
 String title="PLZ Work";
 PFont titleFont; //variable to hold the font type
+float titleWidth = width*1/2;
+float titleFontSize = height; 
 String[] fontList = PFont.list(); //Lists all fonts available on system
 println("start console");
 printArray(fontList); //Lists all possible fonts to choose, then createFont
-titleFont = createFont ("Harrington", 70); //Must also /create Font/ find Font/ NEVER!!!!!!!!! press ok DONT YOU DARE TOUCH IT, WILL BREAK INTERNET AROUND THE WORLD but it is tempting...*clicks on "OK"
-
-rect(width*1/4, height*0, width*1/2, height*1/10);
+titleFont = createFont ("Cambria", height); //Must also /create Font/ find Font/ NEVER!!!!!!!!! press ok DONT YOU DARE TOUCH IT, WILL BREAK INTERNET AROUND THE WORLD but it is tempting...*clicks on "OK"
+float i = 1; 
+rect(width*1/4, height*0, titleWidth, height*1/10);
 fill(#0AAA23); //black ink, uses RGB colors
 textAlign (CENTER, CENTER); //Align X&Y
-textFont(titleFont, 40); //change the number until it fits
+// values: LEFT | CENTER | RIGHT & TOP | CENTER | BOTTOM | BASELINE
+textFont(titleFont, titleFontSize); //change the number until it fits
+while (textWidth(title) > titleWidth) {
+  titleFontSize = titleFontSize * i; 
+  textSize(titleFontSize);
+  i = i - 0.1;
+  println("i: ", i, "Title Font Size: ", titleFontSize);
+}
 text(title, width*1/4, height*0, width*1/2, height*1/10);
 fill(255); //Reset to white for the rest of the program
 // Minimum number of steps to put text into a box

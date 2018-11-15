@@ -13,12 +13,12 @@
   }
    
    //when board is full, reset button will change color
-  /* if (count == 9) {
+   if (count == 9) {
     fill(white2);
     rect(width*2/3, height*0/12, width*1/3, height*1/12);
     fill(255);
     resetText(); //Need to create reset button
-  } */
+  }
  }  
  
  
@@ -27,7 +27,7 @@
    
   fill(0);
   textAlign(CENTER, CENTER);
-  textFont(xoFont, 30);
+  textFont(xoFont, 20);
   if (position == 1) {
     text("X", width*2/5, height*0, width*1/5, height*1/3);
  }
@@ -123,7 +123,7 @@
   }
 }
 
-void xoMouseClicked() {
+/*void xoMouseClicked() {
   if (mouse
-} 
+} */
   
