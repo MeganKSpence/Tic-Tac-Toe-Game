@@ -1,5 +1,5 @@
 //Varables
-String easy = "Easy", medium = "Medium", hard = "Hard", exitButton = "Exit Game", player1 = "X =", player2 = "O =", start = "Start", restart = "Reset";
+String easy = "Easy", medium = "Medium", hard = "Hard", exitButton = "Exit Game", player1 = "X", player2 = "O", start = "Start", restart = "Reset";
 int xWin = 0, oWin = 0, count = 0, position;
 PFont levelFont, xoFont, playerFont, scoreFont;
 /*Boolean printX = false, printO = false;*/ //To signal Board Button, 1-9, has been been pressed //when line is cut out dosen't seem to change anything 
@@ -39,10 +39,10 @@ void draw () {
    
    exitButtonMouseClicked();
    xoButtonDraw();
-   println(" Position:", position, "Count:", count);
+ /*  println(" Position:", position, "Count:", count);
    for (int i = 0; i < noDraw.length; i++) {
      print(" noDraw " + str(i) + ": " + str(noDraw[i]));
-   }
+   }*/
    
  }
  

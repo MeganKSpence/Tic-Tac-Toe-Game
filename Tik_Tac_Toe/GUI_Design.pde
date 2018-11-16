@@ -38,11 +38,7 @@ void GUI_Design() {
   text(start, width*0, height*3/12, width*2/5, height*1/12);
   fill(255);
   
-  //nameing restart button
-  fill(0);
-  textFont(levelFont, 54);
-  text(restart, width*0, height*4/12, width*2/5, height*1/12);
-  fill(255);
+  resetText();
   
   // Will create X scoreboard
   rect(width*2/10, height*13/24, width*3/20, height*1/6);

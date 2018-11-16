@@ -1,85 +1,87 @@
- void textDraw (){
-   
-   fill(0);
-   textAlign(CENTER, CENTER);
-   textFont(xoFont, 30);
-   text(str(xWin), width*2/10, height*13/24, width*3/20, height*1/6);
-   text(str(oWin), width*2/10, height*19/24, width*3/20, height*1/6);
-   
-   if (count == 1 || count == 3 || count == 5 || count == 7 || count == 9) {
+void textDraw () {
+
+  fill(0);
+  textAlign(CENTER, CENTER);
+  textFont(xoFont, 40);
+  text(str(xWin), width*2/10, height*13/24, width*3/20, height*1/6);
+  text(str(oWin), width*2/10, height*19/24, width*3/20, height*1/6);
+
+  if (count == 1 || count == 3 || count == 5 || count == 7 || count == 9) {
     xoText(player1, position);
   } else {
     xoText(player2, position);
   }
-   
-   //when board is full, reset button will change color
-   if (count == 9) {
+
+  //when board is full, reset button will change color
+  if (count == 9) {
     fill(white2);
     rect(width*2/3, height*0/12, width*1/3, height*1/12);
     fill(255);
     resetText(); //Need to create reset button
   }
- }  
- 
- 
- 
-  void xoText (String text, int position) {
-   
+}  
+
+
+
+void xoText (String text, int position) {
+
   fill(0);
   textAlign(CENTER, CENTER);
   textFont(xoFont, 20);
+
   if (position == 1) {
-    text("X", width*2/5, height*0, width*1/5, height*1/3);
- }
+    text(text, width*2/5, height*0, width*1/5, height*1/3);
+  }
   if (position == 2) {
-    text(player2, width*3/5, height*0, width*1/5, height*1/3);
- }
+    text(text, width*3/5, height*0, width*1/5, height*1/3);
+  }
   if (position == 3) {
     text(text, width*4/5, height*0, width*1/5, height*1/3);
- }
+  }
   if (position == 4) {
     text(text, width*2/5, height*1/3, width*1/5, height*1/3);
- }
+  }
   if (position == 5) {
     text(text, width*3/5, height*1/3, width*1/5, height*1/3);
- }
+  }
   if (position == 6) {
     text(text, width*4/5, height*1/3, width*1/5, height*1/3);
- }
+  }
   if (position == 7) {
     text(text, width*2/5, height*2/3, width*1/5, height*1/3);
- }
+  }
   if (position == 8) {
     text(text, width*3/5, height*2/3, width*1/5, height*1/3);
- }
+  }
   if (position == 9) {
-    text(text, width*4/5, height*2/3, width*1/5, height*1/3); 
- }
+    text(text, width*4/5, height*2/3, width*1/5, height*1/3);
+  }
   fill(255);
 }
- 
- 
- 
- void xoButtonDraw () {
-   
-   fill(255);
-    noStroke();
-    rect(width*2/5, height*0, width*1/5, height*1/3);
-    rect(width*3/5, height*0, width*1/5, height*1/3);
-    rect(width*4/5, height*0, width*1/5, height*1/3);
-    rect(width*2/5, height*1/3, width*1/5, height*1/3);
-    rect(width*3/5, height*1/3, width*1/5, height*1/3);
-    rect(width*4/5, height*1/3, width*1/5, height*1/3);
-    rect(width*2/5, height*2/3, width*1/5, height*1/3);
-    rect(width*3/5, height*2/3, width*1/5, height*1/3);
-    rect(width*4/5, height*2/3, width*1/5, height*1/3);
-    stroke(1);
-    //xWin+=1; 
-    
-   if (noDraw[0] == false && mouseX>width*2/5 && mouseX<width*1/5 && mouseY>height*0 && mouseY<height*1/3) { //#1
+
+
+
+void xoButtonDraw () {
+
+  fill(255);
+  /*    noStroke();
+   rect(width*2/5, height*0, width*1/5, height*1/3);
+   rect(width*3/5, height*0, width*1/5, height*1/3);
+   rect(width*4/5, height*0, width*1/5, height*1/3);
+   rect(width*2/5, height*1/3, width*1/5, height*1/3);
+   rect(width*3/5, height*1/3, width*1/5, height*1/3);
+   rect(width*4/5, height*1/3, width*1/5, height*1/3);
+   rect(width*2/5, height*2/3, width*1/5, height*1/3);
+   rect(width*3/5, height*2/3, width*1/5, height*1/3);
+   rect(width*4/5, height*2/3, width*1/5, height*1/3);
+   stroke(1);
+   xWin+=1; */
+
+  if (noDraw[0] == false && mouseX>width*2/5 && mouseX<width*1/5 && mouseY>height*0 && mouseY<height*1/3) { //#1
     position = 1;
     noDraw[0] = true;
     count++;
+    xoText("X", position);
   }
   if (noDraw[1] == false && mouseX>width*3/5 && mouseX<width*1/5 && mouseY>height*0 && mouseY<height*1/3) { //#2
     position = 2;
@@ -122,8 +124,3 @@
     count++;
   }
 }
-
-/*void xoMouseClicked() {
-  if (mouse
-} */
-  
