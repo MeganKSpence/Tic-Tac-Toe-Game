@@ -12,9 +12,7 @@ void setup () {
   textSize(60);
   background(255);
   
-  //finding all fonts on system
- // String[] fontList = PFont.list(); //Will list all of the available fonts on this specific system. Font's will vary per computer
- // printArray(fontList);
+   GUI_Design();
   
   //Load a Font
   levelFont = createFont ("Cambria", 55);
@@ -29,13 +27,15 @@ void setup () {
 }
 void draw () {
   
-  GUI_Design();
   Quit_Button();
   textDraw();
+  Text_Setup();
+  
   
  }
  
- void mouseClicked (){
+ 
+void mouseClicked (){
    
    exitButtonMouseClicked();
    xoButtonDraw();

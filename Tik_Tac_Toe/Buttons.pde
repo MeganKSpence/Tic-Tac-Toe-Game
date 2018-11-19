@@ -3,7 +3,7 @@ color white2 = #989898;
 color regularButton = white;
 color hoverOverButton = white2;
 
-void Quit_Button() {
+void Quit_Button() { 
   
   //println ("Mousex:", mouseX, "\tMouseY:", mouseY);
   
