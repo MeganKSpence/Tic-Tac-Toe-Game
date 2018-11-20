@@ -2,9 +2,11 @@ color white = #FFFFFF;
 color white2 = #989898;
 color regularButton = white;
 color hoverOverButton = white2;
+String exitButton = "Exit Game";
 
 void Quit_Button() { 
   
+  Fonts();
   //println ("Mousex:", mouseX, "\tMouseY:", mouseY);
   
   if (mouseX>width*0 && mouseX<width*2/5 && mouseY>height*5/12 && mouseY<height*6/12) { //Hover Over
