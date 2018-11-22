@@ -1,5 +1,11 @@
 //Varables
-String easy = "Easy", medium = "Medium", hard = "Hard", player1 = "X", player2 = "O", start = "Start", restart = "Reset";
+String easy;
+String medium; 
+String hard;
+String player1;
+String player2;
+String start; 
+String restart;
 PFont levelFont, xoFont, playerFont, scoreFont;
 int xWin = 0, oWin = 0, count = 0, position;
 /*Boolean printX = false, printO = false;*/ //To signal Board Button, 1-9, has been been pressed //when line is cut out dosen't seem to change anything 
@@ -13,7 +19,34 @@ void Fonts () {
   scoreFont = createFont ("Calibri", 55);
 }
 
-void Text_Setup(){
+void stringVariables() {
+  //Strign variables
+  easy = "Easy";
+  medium = "Medium";
+  hard = "Hard";
+  player1 = "X";
+  player2 = "O";
+  start = "Start"; 
+  restart = "Restart";
+}
+
+void Text_Setup(String text, PFont font, float height, color ink, int alignHorizontal, int alignVertical, float rectX, float rectY, float rectWidth, float rectHeight){
+  
+  Fonts(); //calling all possible fonts
+  
+  float fontSize = height; 
+  fill(ink); 
+  textAlign(alignHorizontal, alignVertical); 
+  
+  if (string.length() >=10) {
+    fontSize = textCalculator(height, text, titleWidth); //need to create titleWidth
+  } else {
+    fontSize = fontSize * 0.08; //dont forget to change 0.08 to something that works
+  }
+  
+  textFont(font, fontSize);
+  text(text, rectX, rectY, rectWidth, rectHeight);
+  fill(255);
   
   //Easy Button Text
   fill(0);
@@ -43,7 +76,7 @@ void Text_Setup(){
   fill(255);
   
   //Restart Button Text
-  
+  Reset_Text();
   
   //Quit Button Text
   
@@ -63,7 +96,18 @@ void Text_Setup(){
 void Reset_Text() {
   fill(0);
   textAlign (CENTER, CENTER);
-  //textFont(levelFont, 54);
+  textFont(levelFont, 54);
   text(restart, width*0, height*4/12, width*2/5, height*1/12);
   fill(255);
+}
+
+float textCalculator(float size, String text, float rectWidth) {
+  float i = 1;
+  textSize(size); //for textWidth sizing
+  while (textWidth(text) > rectWidth) {
+  size = size * i; 
+  textSize(size);
+  i = i - 0.1;
+ }
+  return size;
 }

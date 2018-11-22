@@ -10,7 +10,6 @@ void GUI_Design() {
   line(0, height*1/12, width*2/5, height*1/12);
   line(0, height*2/12, width*2/5, height*2/12);
   line(width*0, height*3/12, width*2/5, height*3/12);
-  fill(0); //Ink, hexidecimal (RGB) copied from color selector
   
   //start, exit and restart button lines
   line(width*0, height*4/12, width*2/5, height*4/12);

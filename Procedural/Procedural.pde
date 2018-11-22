@@ -1,5 +1,3 @@
-
-
 void setup() {
   //fullScreen(); 
   size(600, 600);
