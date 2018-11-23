@@ -18,7 +18,7 @@ void textDraw() {
     fill(white2);
     rect(width*0, height*4/12, width*2/5, height*1/12);
     fill(255);
-    Reset_Text(); //Need to create reset button
+    //Reset_Text(); //Need to create reset button
   }
 }  
 
