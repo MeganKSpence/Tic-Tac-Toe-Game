@@ -1,16 +1,20 @@
 void textDraw() {
 
-  fill(0);
+ /* fill(0);
   textAlign(CENTER, CENTER);
   textFont(xoFont, 40);
   text(str(xWin), width*2/10, height*13/24, width*3/20, height*1/6);
   text(str(oWin), width*2/10, height*19/24, width*3/20, height*1/6);
-  fill(255);
+  fill(255); */
+  
+  //Text_Setup(str(xWin), xoFont, height, 0, CENTER, CENTER, width*2/10, height*13/24, width*3/20, height*1/6); //Line 10 and 11, refer to Tik_Tac_Toe line 22 and 23 for information
+  //Text_Setup(str(oWin), xoFont, height, 0, CENTER, CENTER, width*2/10, height*19/24, width*3/20, height*1/6);
+
 
   if (count == 1 || count == 3 || count == 5 || count == 7 || count == 9) {
-    xoText(player1, position);
+    xoText(X, position); //You cannot get rid of this text when trying to make X bigger //Must ask Mercer how line 15 and line 177 could be altered in order to make text bigger
   } else {
-    xoText(player2, position);
+    xoText(O, position); //You cannot get rid of this text when trying to make O bigger
   }
 
   //when board is full, reset button will change color
@@ -18,12 +22,12 @@ void textDraw() {
     fill(white2);
     rect(width*0, height*4/12, width*2/5, height*1/12);
     fill(255);
-    //Reset_Text(); //Need to create reset button
+    Text_Setup(restart, levelFont, height, 0, CENTER, CENTER, width*0, height*4/12, titleWidth, titleHeight);
   }
 }  
 
 void xoText (String text, int position) {
-  
+
   //println(" Position:", position, "Count:", count);
 
   fill(0);
@@ -63,20 +67,6 @@ void xoText (String text, int position) {
 
 
 void xoButtonDraw () {
-
-  //fill(255);
-  /*    noStroke();
-   rect(width*2/5, height*0, width*1/5, height*1/3);
-   rect(width*3/5, height*0, width*1/5, height*1/3);
-   rect(width*4/5, height*0, width*1/5, height*1/3);
-   rect(width*2/5, height*1/3, width*1/5, height*1/3);
-   rect(width*3/5, height*1/3, width*1/5, height*1/3);
-   rect(width*4/5, height*1/3, width*1/5, height*1/3);
-   rect(width*2/5, height*2/3, width*1/5, height*1/3);
-   rect(width*3/5, height*2/3, width*1/5, height*1/3);
-   rect(width*4/5, height*2/3, width*1/5, height*1/3);
-   stroke(1);
-   xWin+=1; */
 
   if (noDraw[0] == false && mouseX<width*3/5 && mouseX>width*2/5 && mouseY<height*1/3 && mouseY>height*0) { //#1
     position = 1;
@@ -121,6 +111,6 @@ void xoButtonDraw () {
   if (noDraw[8] == false && mouseX<width*5/5 && mouseX>width*4/5 && mouseY<height*3/3 && mouseY>height*2/3) { //#9
     position = 9;
     noDraw[8] = true;
-    count++; 
-  } 
+    count++;
+  }
 } 
