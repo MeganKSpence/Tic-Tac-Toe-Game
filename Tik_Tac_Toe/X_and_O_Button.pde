@@ -7,10 +7,6 @@ void textDraw() {
   text(str(oWin), width*2/10, height*19/24, width*3/20, height*1/6);
   fill(255); 
 
- // Text_Setup(str(xWin), xoFont, height, 0, CENTER, CENTER, width*2/10, height*13/24, width*3/20, height*1/6); //Line 10 and 11, refer to Tik_Tac_Toe line 22 and 23 for information
- // Text_Setup(str(oWin), xoFont, height, 0, CENTER, CENTER, width*2/10, height*19/24, width*3/20, height*1/6);
-
-
   if (count == 1 || count == 3 || count == 5 || count == 7 || count == 9) {
     xoText(X, position); //You cannot get rid of this text when trying to make X bigger //Must ask Mercer how line 15 and line 177 could be altered in order to make text bigger
   } else {
