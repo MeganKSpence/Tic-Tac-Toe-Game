@@ -74,3 +74,11 @@ float textCalculator(float size, String string, float rectWidth) {
   }
   return size;
 }
+
+void X_Text() {
+  
+}
+
+void O_Text() {
+  
+}

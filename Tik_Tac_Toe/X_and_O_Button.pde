@@ -1,14 +1,14 @@
 void textDraw() {
-
- /* fill(0);
+  
+  fill(0);
   textAlign(CENTER, CENTER);
   textFont(xoFont, 40);
   text(str(xWin), width*2/10, height*13/24, width*3/20, height*1/6);
   text(str(oWin), width*2/10, height*19/24, width*3/20, height*1/6);
-  fill(255); */
-  
-  //Text_Setup(str(xWin), xoFont, height, 0, CENTER, CENTER, width*2/10, height*13/24, width*3/20, height*1/6); //Line 10 and 11, refer to Tik_Tac_Toe line 22 and 23 for information
-  //Text_Setup(str(oWin), xoFont, height, 0, CENTER, CENTER, width*2/10, height*19/24, width*3/20, height*1/6);
+  fill(255); 
+
+ // Text_Setup(str(xWin), xoFont, height, 0, CENTER, CENTER, width*2/10, height*13/24, width*3/20, height*1/6); //Line 10 and 11, refer to Tik_Tac_Toe line 22 and 23 for information
+ // Text_Setup(str(oWin), xoFont, height, 0, CENTER, CENTER, width*2/10, height*19/24, width*3/20, height*1/6);
 
 
   if (count == 1 || count == 3 || count == 5 || count == 7 || count == 9) {
@@ -17,13 +17,13 @@ void textDraw() {
     xoText(O, position); //You cannot get rid of this text when trying to make O bigger
   }
 
-  //when board is full, reset button will change color
-  if (count == 9) {
-    fill(white2);
-    rect(width*0, height*4/12, width*2/5, height*1/12);
-    fill(255);
-    Text_Setup(restart, levelFont, height, 0, CENTER, CENTER, width*0, height*4/12, titleWidth, titleHeight);
-  }
+//when board is full, reset button will change color
+if (count == 9) {
+  fill(white2);
+  rect(width*0, height*4/12, width*2/5, height*1/12);
+  fill(255);
+  Text_Setup(restart, levelFont, height, 0, CENTER, CENTER, width*0, height*4/12, titleWidth, titleHeight);
+}
 }  
 
 void xoText (String text, int position) {
