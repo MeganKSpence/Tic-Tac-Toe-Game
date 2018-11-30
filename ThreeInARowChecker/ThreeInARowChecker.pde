@@ -10,6 +10,7 @@ void setup() {
   //fullscreen
   gamePieces();
   trigger();
+  check3InRow();
 }
 
 void draw() { //Empty draw() loop without visual data
