@@ -1,25 +1,27 @@
+void count() {
+  if (count == 1 || count == 3 || count == 5 || count == 7 || count == 9) {
+    xoText(X, position); //You cannot get rid of this text when trying to make X bigger
+  } else {
+    xoText(O, position); //You cannot get rid of this text when trying to make O bigger
+  }
+}
+
 void textDraw() {
-  
+
   fill(0);
   textAlign(CENTER, CENTER);
   textFont(xoFont, 40);
   text(str(xWin), width*2/10, height*13/24, width*3/20, height*1/6);
   text(str(oWin), width*2/10, height*19/24, width*3/20, height*1/6);
-  fill(255); 
-
-  if (count == 1 || count == 3 || count == 5 || count == 7 || count == 9) {
-    xoText(X, position); //You cannot get rid of this text when trying to make X bigger //Must ask Mercer how line 15 and line 177 could be altered in order to make text bigger
-  } else {
-    xoText(O, position); //You cannot get rid of this text when trying to make O bigger
-  }
-
-//when board is full, reset button will change color
-if (count == 9) {
-  fill(white2);
-  rect(width*0, height*4/12, width*2/5, height*1/12);
   fill(255);
-  Text_Setup(restart, levelFont, height, 0, CENTER, CENTER, width*0, height*4/12, titleWidth, titleHeight);
-}
+
+  //when board is full, reset button will change color
+  if (count == 9) {
+    fill(white2);
+    rect(width*0, height*4/12, width*2/5, height*1/12);
+    fill(255);
+    Text_Setup(restart, levelFont, height, 0, CENTER, CENTER, width*0, height*4/12, titleWidth, titleHeight);
+  }
 }  
 
 void xoText (String text, int position) {

@@ -14,7 +14,7 @@ String exitButton;
 
 PFont levelFont, xoFont, playerFont, scoreFont;
 
-int xWin = 0, oWin = 0, count = 0, position;
+int xWin = 0, oWin = 0, count = 0, position; //count might work to replace boardPieces in gamePieces in Game_Pieces
 Boolean[] noDraw = new Boolean[9]; //Turn off ablity to draw an X or an O in a sqaure of the board
 
 void Fonts () {
@@ -76,9 +76,7 @@ float textCalculator(float size, String string, float rectWidth) {
 }
 
 void X_Text() {
-  
 }
 
 void O_Text() {
-  
 }
