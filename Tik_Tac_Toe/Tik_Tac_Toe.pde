@@ -6,8 +6,6 @@ void setup() {
   background(255);
 
   //calling other "voids" from other pages
-  gamePieces();
-  trigger();
   check3InRow(); 
   stringVariables();
   GUI_Design();
@@ -33,7 +31,6 @@ void setup() {
 void draw () {
   Quit_Button();
   textDraw();
-  count();
 }
 
 

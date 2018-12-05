@@ -1,11 +1,3 @@
-void count() {
-  if (count == 1 || count == 3 || count == 5 || count == 7 || count == 9) {
-    xoText(X, position); //You cannot get rid of this text when trying to make X bigger
-  } else {
-    xoText(O, position); //You cannot get rid of this text when trying to make O bigger
-  }
-}
-
 void textDraw() {
 
   fill(0);
@@ -14,14 +6,15 @@ void textDraw() {
   text(str(xWin), width*2/10, height*13/24, width*3/20, height*1/6);
   text(str(oWin), width*2/10, height*19/24, width*3/20, height*1/6);
   fill(255);
+  
+  if (count == 1 || count == 3 || count == 5 || count == 7 || count == 9) {
+    xoText(X, position); //You cannot get rid of this text when trying to make X bigger //put boardpiece == x in this area?
+  } else {
+    xoText(O, position); //You cannot get rid of this text when trying to make O bigger
+  }
 
   //when board is full, reset button will change color
-  if (count == 9) {
-    fill(white2);
-    rect(width*0, height*4/12, width*2/5, height*1/12);
-    fill(255);
-    Text_Setup(restart, levelFont, height, 0, CENTER, CENTER, width*0, height*4/12, titleWidth, titleHeight);
-  }
+  resetButtonColor();
 }  
 
 void xoText (String text, int position) {
@@ -34,30 +27,39 @@ void xoText (String text, int position) {
 
   if (position == 1) {
     text(text, width*2/5, height*0, width*1/5, height*1/3);
+    boardPiece[0] = text;
   }
   if (position == 2) {
     text(text, width*3/5, height*0, width*1/5, height*1/3);
+    boardPiece[1] = text;
   }
   if (position == 3) {
     text(text, width*4/5, height*0, width*1/5, height*1/3);
+    boardPiece[2] = text; 
   }
   if (position == 4) {
     text(text, width*2/5, height*1/3, width*1/5, height*1/3);
+    boardPiece[3] = text;
   }
   if (position == 5) {
     text(text, width*3/5, height*1/3, width*1/5, height*1/3);
+    boardPiece[4] = text;
   }
   if (position == 6) {
     text(text, width*4/5, height*1/3, width*1/5, height*1/3);
+    boardPiece[5] = text;
   }
   if (position == 7) {
     text(text, width*2/5, height*2/3, width*1/5, height*1/3);
+    boardPiece[6] = text;
   }
   if (position == 8) {
     text(text, width*3/5, height*2/3, width*1/5, height*1/3);
+    boardPiece[7] = text;
   }
   if (position == 9) {
     text(text, width*4/5, height*2/3, width*1/5, height*1/3);
+    boardPiece[8] = text;
   }
   fill(255);
 }
