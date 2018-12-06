@@ -6,9 +6,8 @@ void setup() {
   background(255);
 
   //calling other "voids" from other pages
-  check3InRow(); 
-  stringVariables();
   GUI_Design();
+  stringVariables();
   Fonts();
 
   //Writing Text
@@ -31,14 +30,15 @@ void setup() {
 void draw () {
   Quit_Button();
   textDraw();
+  check3InRow();
 }
 
 
 void mouseClicked () {
   exitButtonMouseClicked();
   xoButtonDraw();
-  println(" Position:", position, "Count:", count);
-  /*for (int i = 0; i < noDraw.length; i++) {
-   print(" noDraw " + str(i) + ": " + str(noDraw[i])); 
-   } */
+  if (winX == true || winO == true) {
+  } else {
+    println(" Position:", position, "Count:", count);
+  }
 }

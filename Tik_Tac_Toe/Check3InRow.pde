@@ -26,8 +26,8 @@ void check3InRow() {
     onlyO();
     winO = checkNestedFOR("O", onlyOPiece);
   }
-  println("X's won:", winX);
-  println("O's won:", winO); 
+ // println("X's won:", winX);
+ // println("O's won:", winO); 
 }
 
 void onlyX() {
@@ -49,7 +49,9 @@ void onlyO() {
 boolean checkNestedFOR(String string, String[] pieces) { 
   boolean win = false; 
   for (int i=3; i<6; i++) {
+    println("I is " + i);
     for (int j=0; j<3; j++) {
+      println("J is " + j);
       boolean letUsIn = false;
       if (((1-j)+1) == 6 || ((1+j)+1) == 7 || ((1-j)+1) == 8) {
         letUsIn = true;
@@ -72,19 +74,19 @@ boolean checkNestedFOR(String string, String[] pieces) {
           println("win"); //in game will probaly have to call a void designed to display win
           win = true;
         } else {
-          println("nothing");
+          //println("nothing");
         }
         if (pieces[1] == string && pieces[j] == string && pieces[(1-j)+1] == string) {
-          println("win");
+          println("win " + j); //line one has a glitch
           win = true;
         } else {
-          println("nothing");
+          //println("nothing");
         }
         if (pieces[7] == string && pieces[j] == string && pieces[(7-j)+7] == string) {
           println("win");
           win = true;
         } else {
-          println("nothing");
+          //println("nothing");
         }
       }
     }
