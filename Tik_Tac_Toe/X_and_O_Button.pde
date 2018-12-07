@@ -6,7 +6,7 @@ void textDraw() {
   text(str(xWin), width*2/10, height*13/24, width*3/20, height*1/6);
   text(str(oWin), width*2/10, height*19/24, width*3/20, height*1/6);
   fill(255);
-  
+
   if (count == 1 || count == 3 || count == 5 || count == 7 || count == 9) {
     xoText(X, position); //You cannot get rid of this text when trying to make X bigger //put boardpiece == x in this area?
   } else {
@@ -35,7 +35,7 @@ void xoText (String text, int position) {
   }
   if (position == 3) {
     text(text, width*4/5, height*0, width*1/5, height*1/3);
-    boardPiece[2] = text; 
+    boardPiece[2] = text;
   }
   if (position == 4) {
     text(text, width*2/5, height*1/3, width*1/5, height*1/3);

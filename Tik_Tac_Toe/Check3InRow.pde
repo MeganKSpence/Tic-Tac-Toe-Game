@@ -13,10 +13,10 @@ String[] onlyOPiece = new String[numberOfBoardPieces]; //let game_Piece be in vo
 //String[] trigger = new String[triggerPieces]; 
 
 void check3InRow() {
-    if (count >= 5) {
-      check3InRowX = true;
-      check3InRowO = true;
-    }
+  if (count >= 5) {
+    check3InRowX = true;
+    check3InRowO = true;
+  }
 
   if (check3InRowX == true) {
     onlyX();
@@ -26,8 +26,8 @@ void check3InRow() {
     onlyO();
     winO = checkNestedFOR("O", onlyOPiece);
   }
- // println("X's won:", winX);
- // println("O's won:", winO); 
+//  println("X's won:", winX);
+//  println("O's won:", winO);
 }
 
 void onlyX() {
@@ -49,9 +49,7 @@ void onlyO() {
 boolean checkNestedFOR(String string, String[] pieces) { 
   boolean win = false; 
   for (int i=3; i<6; i++) {
-    println("I is " + i);
     for (int j=0; j<3; j++) {
-      println("J is " + j);
       boolean letUsIn = false;
       if (((1-j)+1) == 6 || ((1+j)+1) == 7 || ((1-j)+1) == 8) {
         letUsIn = true;
@@ -62,7 +60,7 @@ boolean checkNestedFOR(String string, String[] pieces) {
       if (((4-j)+4) == 6 || ((4+j)+4) == 7 || ((4-j)+4) == 8) {
         letUsIn = true;
       }
-      if  (((5-j)+5) == 6 || ((5+j)+5) == 7 || ((5-j)+5) == 8) {
+      if (((5-j)+5) == 6 || ((5+j)+5) == 7 || ((5-j)+5) == 8) {
         letUsIn = true;
       }
       if (((7-j)+7) == 6 || ((7+j)+7) == 7 || ((7-j)+7) == 8) {
@@ -74,19 +72,19 @@ boolean checkNestedFOR(String string, String[] pieces) {
           println("win"); //in game will probaly have to call a void designed to display win
           win = true;
         } else {
-          //println("nothing");
+          // println("nothing");
         }
         if (pieces[1] == string && pieces[j] == string && pieces[(1-j)+1] == string) {
-          println("win " + j); //line one has a glitch
+          println("Position 1 was here"); //Found problem if J is equal to 1 will consider 1
           win = true;
         } else {
-          //println("nothing");
+          // println("nothing");
         }
-        if (pieces[7] == string && pieces[j] == string && pieces[(7-j)+7] == string) {
-          println("win");
+        if (pieces[7] == string && pieces[j] == string && pieces[(7-j)+7] == string) { //HONESTLY, it do be ur own ~ luke/maher
+          println("position 2 was here");
           win = true;
         } else {
-          //println("nothing");
+          // println("nothing");
         }
       }
     }
