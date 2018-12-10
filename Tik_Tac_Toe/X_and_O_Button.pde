@@ -1,5 +1,4 @@
 void textDraw() {
-
   fill(0);
   textAlign(CENTER, CENTER);
   textFont(xoFont, 40);

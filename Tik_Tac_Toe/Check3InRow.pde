@@ -15,19 +15,21 @@ String[] onlyOPiece = new String[numberOfBoardPieces]; //let game_Piece be in vo
 void check3InRow() {
   if (count >= 5) {
     check3InRowX = true;
-    check3InRowO = true;
-  }
+    check3InRowO = false;
+  } 
 
   if (check3InRowX == true) {
     onlyX();
     winX = checkNestedFOR("X", onlyXPiece); //because of basic prameters can use checkNestedFOR(); for both check3InRowX and check3InRowO
+    xWin = count++;
   }
   if (check3InRowO == true) {
     onlyO();
     winO = checkNestedFOR("O", onlyOPiece);
+    oWin = count++;
   }
-//  println("X's won:", winX);
-//  println("O's won:", winO);
+    println("X's won:", winX);
+    println("O's won:", winO);
 }
 
 void onlyX() {
