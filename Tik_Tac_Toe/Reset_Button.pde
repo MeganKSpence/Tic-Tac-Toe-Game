@@ -1,5 +1,5 @@
 void resetButtonColor() { 
-  if (winX == true || winO == true) {
+  if (winX == true || winO == true || count == 9) {
     fill(white2);
     rect(width*0, height*4/12, width*2/5, height*1/12);
     fill(255);

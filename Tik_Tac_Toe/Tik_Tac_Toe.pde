@@ -31,6 +31,7 @@ void draw () {
   Quit_Button();
   textDraw();
   check3InRow();
+  scoreboardCount();
 }
 
 

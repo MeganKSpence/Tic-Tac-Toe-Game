@@ -1,8 +1,7 @@
-// delete game_Pieces when done
 //Global Variables
-boolean check3InRowX = false; 
-boolean check3InRowO = false;
-boolean winX = false;
+//boolean check3InRowX = false; 
+//boolean check3InRowO = false;
+boolean winX = true;
 boolean winO = false; 
 
 int numberOfBoardPieces = 9;
@@ -12,24 +11,18 @@ String[] onlyXPiece = new String[numberOfBoardPieces];
 String[] onlyOPiece = new String[numberOfBoardPieces]; //let game_Piece be in void xoText
 //String[] trigger = new String[triggerPieces]; 
 
-void check3InRow() {
-  if (count >= 5) {
-    check3InRowX = true;
-    check3InRowO = false;
+void check3InRow() { 
+  //onlyX();
+  checkNestedFORO();
+  checkNestedFORX();
+  if (winX == true) {
+    println("X won!");
   } 
-
-  if (check3InRowX == true) {
-    onlyX();
-    winX = checkNestedFOR("X", onlyXPiece); //because of basic prameters can use checkNestedFOR(); for both check3InRowX and check3InRowO
-    xWin = count++;
+  else if (winO == true) {
+    println("O won!");
+  } else if (count == 9){
+    println("You Tied!");
   }
-  if (check3InRowO == true) {
-    onlyO();
-    winO = checkNestedFOR("O", onlyOPiece);
-    oWin = count++;
-  }
-    println("X's won:", winX);
-    println("O's won:", winO);
 }
 
 void onlyX() {
@@ -46,9 +39,18 @@ void onlyO() {
       onlyOPiece[i] = "O";
     }
   }
+} 
+
+void scoreboardCount() {
+   if (winX == true) {
+    xWin = count++;
+  }
+  if (winO == true) {
+    oWin = count++;
+  }
 }
 
-boolean checkNestedFOR(String string, String[] pieces) { 
+/*boolean checkNestedFOR(String string, String[] pieces) { 
   boolean win = false; 
   for (int i=3; i<6; i++) {
     for (int j=0; j<3; j++) {
@@ -92,4 +94,4 @@ boolean checkNestedFOR(String string, String[] pieces) {
     }
   }
   return win;
-}
+} */
