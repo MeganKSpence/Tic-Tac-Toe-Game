@@ -2,6 +2,10 @@ int xWin = 0, oWin = 0, count = 0, position; //count might work to replace board
 Boolean[] noDraw = new Boolean[9]; 
 
 boolean positionTrigger = false;
+boolean positionTrigger2 = false;
+int number = 0;
+
+//String triggerText = "O";
 
 void textDraw() {
 
@@ -25,41 +29,61 @@ void xoText (String text, int position) {
 
   if (position == 1 && trigger2 == true && positionTrigger == false) {
     text(text, width*2/5, height*0, width*1/5, height*1/3);
-    boardPiece[0] = text; 
-  } else if (position == 1 && trigger2 == true && positionTrigger == true) { //reavalute... must figure out, if else statement should come before if statement or not
-    println("have I been reset?");
+    boardPiece[0] = text;
+    positionTrigger = true;
+    number = number + 1;
+    println("I have played: ", number);
+  } else if (position == 1 && trigger2 == true && positionTrigger == true) {
+    println("I am active");
+    //May keep positionTrigger if proves useful... currently stops text from drawing forever but may also be handy when it comes to resetting the text
   }
   if (position == 2 && trigger2 == true) {
     text(text, width*3/5, height*0, width*1/5, height*1/3);
     boardPiece[1] = text;
+    positionTrigger = true;
+  } else if (position == 2 && trigger2 == true && positionTrigger == true) {
   }
   if (position == 3 && trigger2 == true) {
     text(text, width*4/5, height*0, width*1/5, height*1/3);
     boardPiece[2] = text;
+    positionTrigger = true;
+  } else if (position == 3 && trigger2 == true && positionTrigger == true) {
   }
   if (position == 4 && trigger2 == true) {
     text(text, width*2/5, height*1/3, width*1/5, height*1/3);
     boardPiece[3] = text;
+    positionTrigger = true;
+  } else if (position == 4 && trigger2 == true && positionTrigger == true) {
   }
   if (position == 5 && trigger2 == true) {
     text(text, width*3/5, height*1/3, width*1/5, height*1/3);
     boardPiece[4] = text;
+    positionTrigger = true;
+  } else if (position == 5 && trigger2 == true && positionTrigger == true) {
   }
   if (position == 6 && trigger2 == true) {
     text(text, width*4/5, height*1/3, width*1/5, height*1/3);
     boardPiece[5] = text;
+    positionTrigger = true;
+  } else if (position == 6 && trigger2 == true && positionTrigger == true) {
   }
   if (position == 7 && trigger2 == true) {
     text(text, width*2/5, height*2/3, width*1/5, height*1/3);
     boardPiece[6] = text;
+    positionTrigger = true;
+  } else if (position == 7 && trigger2 == true && positionTrigger == true) {
   }
   if (position == 8 && trigger2 == true) {
     text(text, width*3/5, height*2/3, width*1/5, height*1/3);
     boardPiece[7] = text;
+    positionTrigger = true;
+  } else if (position == 8 && trigger2 == true && positionTrigger == true) {
   }
   if (position == 9 && trigger2 == true) {
     text(text, width*4/5, height*2/3, width*1/5, height*1/3);
     boardPiece[8] = text;
+    positionTrigger = true;
+  } else if (position == 9 && trigger2 == true && positionTrigger == true) {
   }
   fill(255);
 }

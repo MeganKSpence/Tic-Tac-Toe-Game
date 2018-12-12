@@ -18,6 +18,7 @@ void resetProgram_Play() { //In this progeram we need to keep the score while re
       for (int i = 0; i < 9; i++) {
         noDraw[i] = false;
       }
+      positionTrigger2 = true; 
       fill(white);
     }
   }

@@ -1,5 +1,5 @@
 color white = #FFFFFF;
-color white2 = #989898;
+color white2 = #CECECE;
 color regularButton = white;
 color hoverOverButton = white2;
 
