@@ -1,10 +1,9 @@
+int xWin = 0, oWin = 0, count = 0, position; //count might work to replace boardPieces in gamePieces in Game_Pieces
+Boolean[] noDraw = new Boolean[9]; 
+
+boolean positionTrigger = false;
+
 void textDraw() {
-  fill(0);
-  textAlign(CENTER, CENTER);
-  textFont(xoFont, 40);
-  text(str(xWin), width*2/10, height*13/24, width*3/20, height*1/6);
-  text(str(oWin), width*2/10, height*19/24, width*3/20, height*1/6);
-  fill(255);
 
   if (count == 1 || count == 3 || count == 5 || count == 7 || count == 9) {
     xoText(X, position); //You cannot get rid of this text when trying to make X bigger //put boardpiece == x in this area?
@@ -24,39 +23,41 @@ void xoText (String text, int position) {
   textAlign(CENTER, CENTER);
   textFont(xoFont, 40);
 
-  if (position == 1) {
+  if (position == 1 && trigger2 == true && positionTrigger == false) {
     text(text, width*2/5, height*0, width*1/5, height*1/3);
-    boardPiece[0] = text;
+    boardPiece[0] = text; 
+  } else if (position == 1 && trigger2 == true && positionTrigger == true) { //reavalute... must figure out, if else statement should come before if statement or not
+    println("have I been reset?");
   }
-  if (position == 2) {
+  if (position == 2 && trigger2 == true) {
     text(text, width*3/5, height*0, width*1/5, height*1/3);
     boardPiece[1] = text;
   }
-  if (position == 3) {
+  if (position == 3 && trigger2 == true) {
     text(text, width*4/5, height*0, width*1/5, height*1/3);
     boardPiece[2] = text;
   }
-  if (position == 4) {
+  if (position == 4 && trigger2 == true) {
     text(text, width*2/5, height*1/3, width*1/5, height*1/3);
     boardPiece[3] = text;
   }
-  if (position == 5) {
+  if (position == 5 && trigger2 == true) {
     text(text, width*3/5, height*1/3, width*1/5, height*1/3);
     boardPiece[4] = text;
   }
-  if (position == 6) {
+  if (position == 6 && trigger2 == true) {
     text(text, width*4/5, height*1/3, width*1/5, height*1/3);
     boardPiece[5] = text;
   }
-  if (position == 7) {
+  if (position == 7 && trigger2 == true) {
     text(text, width*2/5, height*2/3, width*1/5, height*1/3);
     boardPiece[6] = text;
   }
-  if (position == 8) {
+  if (position == 8 && trigger2 == true) {
     text(text, width*3/5, height*2/3, width*1/5, height*1/3);
     boardPiece[7] = text;
   }
-  if (position == 9) {
+  if (position == 9 && trigger2 == true) {
     text(text, width*4/5, height*2/3, width*1/5, height*1/3);
     boardPiece[8] = text;
   }

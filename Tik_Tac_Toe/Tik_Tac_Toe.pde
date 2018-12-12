@@ -28,16 +28,19 @@ void setup() {
 }
 
 void draw () {
-  Quit_Button();
-  textDraw();
   check3InRow();
   scoreboardCount();
+  textDraw(); 
+  Quit_Button();
 }
+
+
 
 
 void mouseClicked () {
   exitButtonMouseClicked();
   xoButtonDraw();
+  resetProgram_Play();
   if (winX == true || winO == true) {
   } else {
     println(" Position:", position, "Count:", count);

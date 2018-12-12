@@ -4,7 +4,6 @@ color regularButton = white;
 color hoverOverButton = white2;
 
 void Quit_Button() { 
-
   Fonts();
   //println ("Mousex:", mouseX, "\tMouseY:", mouseY);
 

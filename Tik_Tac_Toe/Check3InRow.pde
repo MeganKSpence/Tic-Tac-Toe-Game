@@ -1,8 +1,11 @@
 //Global Variables
 //boolean check3InRowX = false; 
 //boolean check3InRowO = false;
-boolean winX = true;
+boolean winX = false;
 boolean winO = false; 
+boolean trigger = true;
+boolean trigger2 = true;
+boolean trigger3 = true;
 
 int numberOfBoardPieces = 9;
 
@@ -12,16 +15,18 @@ String[] onlyOPiece = new String[numberOfBoardPieces]; //let game_Piece be in vo
 //String[] trigger = new String[triggerPieces]; 
 
 void check3InRow() { 
-  //onlyX();
+  onlyX();
   checkNestedFORO();
   checkNestedFORX();
-  if (winX == true) {
-    println("X won!");
-  } 
-  else if (winO == true) {
+  if (winX == true && trigger2 == true) {
+    //println("X won!"); //Need to set winX as false again and then also simultaniusly stop or "break" the code from running again
+    trigger2 = false;
+  } else if (winO == true && trigger2 == true) {
     println("O won!");
-  } else if (count == 9){
+    trigger2 = false;
+  } else if (count == 9 && trigger2 == true) {
     println("You Tied!");
+    trigger2 = false;
   }
 }
 
@@ -42,56 +47,97 @@ void onlyO() {
 } 
 
 void scoreboardCount() {
-   if (winX == true) {
-    xWin = count++;
+  if (winX == true && trigger3 == true) {
+    xWin = xWin + 1;
+   // println(xWin);
+    fill(0);
+    textAlign(CENTER, CENTER);
+    textFont(xoFont, 40);
+    text(str(xWin), width*2/10, height*13/24, width*3/20, height*1/6);
+    fill(255);
+    trigger3 = false;
   }
-  if (winO == true) {
-    oWin = count++;
+  if (winO == true && trigger3 == true) {
+    oWin = oWin + 1;
+    fill(0);
+    textAlign(CENTER, CENTER);
+    textFont(xoFont, 40);
+    text(str(oWin), width*2/10, height*19/24, width*3/20, height*1/6);
+    fill(255);
+    trigger3 = false;
   }
 }
 
-/*boolean checkNestedFOR(String string, String[] pieces) { 
-  boolean win = false; 
-  for (int i=3; i<6; i++) {
-    for (int j=0; j<3; j++) {
-      boolean letUsIn = false;
-      if (((1-j)+1) == 6 || ((1+j)+1) == 7 || ((1-j)+1) == 8) {
-        letUsIn = true;
-      }
-      if (((3-j)+3) == 6 || ((3+j)+3) == 7 || ((3-j)+3) == 8) {
-        letUsIn = true;
-      }
-      if (((4-j)+4) == 6 || ((4+j)+4) == 7 || ((4-j)+4) == 8) {
-        letUsIn = true;
-      }
-      if (((5-j)+5) == 6 || ((5+j)+5) == 7 || ((5-j)+5) == 8) {
-        letUsIn = true;
-      }
-      if (((7-j)+7) == 6 || ((7+j)+7) == 7 || ((7-j)+7) == 8) {
-        letUsIn = true;
-      }
+Boolean checkNestedFORX() {
+  onlyX();
+  if (onlyXPiece[0] == "X" && onlyXPiece[3] == "X" && onlyXPiece[6] == "X" && trigger == true) {
+    winX = true;
+    trigger = false;
+  } 
+  if (onlyXPiece[1] == "X" && onlyXPiece[4] == "X" && onlyXPiece[7] == "X" && trigger == true) {
+    winX = true;
+    trigger = false;
+  } 
+  if (onlyXPiece[2] == "X" && onlyXPiece[5] == "X" && onlyXPiece[8] == "X" && trigger == true) {
+    winX = true;
+    trigger = false;
+  } 
+  if (onlyXPiece[0] == "X" && onlyXPiece[1] == "X" && onlyXPiece[2] == "X" && trigger == true) {
+    winX = true;
+    trigger = false;
+  } 
+  if (onlyXPiece[3] == "X" && onlyXPiece[4] == "X" && onlyXPiece[5] == "X" && trigger == true) {
+    winX = true;
+    trigger = false;
+  } 
+  if (onlyXPiece[6] == "X" && onlyXPiece[7] == "X" && onlyXPiece[8] == "X" && trigger == true) {
+    winX = true;
+    trigger = false;
+  } 
+  if (onlyXPiece[0] == "X" && onlyXPiece[4] == "X" && onlyXPiece[8] == "X" && trigger == true) {
+    winX = true;
+    trigger = false;
+  } 
+  if (onlyXPiece[2] == "X" && onlyXPiece[4] == "X" && onlyXPiece[6] == "X" && trigger == true) {
+    winX = true;
+    trigger = false;
+  } 
+  return winX;
+}
 
-      if (letUsIn == true) {
-        if (pieces[i] == string && pieces[j] == string && pieces[(i-j)+i] == string) {
-          println("win"); //in game will probaly have to call a void designed to display win
-          win = true;
-        } else {
-          // println("nothing");
-        }
-        if (pieces[1] == string && pieces[j] == string && pieces[(1-j)+1] == string) {
-          println("Position 1 was here"); //Found problem if J is equal to 1 will consider 1
-          win = true;
-        } else {
-          // println("nothing");
-        }
-        if (pieces[7] == string && pieces[j] == string && pieces[(7-j)+7] == string) { //HONESTLY, it do be ur own ~ luke/maher
-          println("position 2 was here");
-          win = true;
-        } else {
-          // println("nothing");
-        }
-      }
-    }
-  }
-  return win;
-} */
+boolean checkNestedFORO() {
+  onlyO();
+  if (onlyOPiece[0] == "O" && onlyOPiece[3] == "O" && onlyOPiece[6] == "O" && trigger == true) {
+    winO = true;
+    trigger = false;
+  } 
+  if (onlyOPiece[1] == "O" && onlyOPiece[4] == "O" && onlyOPiece[7] == "O" && trigger == true) {
+    winO = true;
+    trigger = false;
+  } 
+  if (onlyOPiece[2] == "O" && onlyOPiece[5] == "O" && onlyOPiece[8] == "O" && trigger == true) {
+    winO = true;
+    trigger = false;
+  } 
+  if (onlyOPiece[0] == "O" && onlyOPiece[1] == "O" && onlyOPiece[2] == "O" && trigger == true) {
+    winO = true;
+    trigger = false;
+  } 
+  if (onlyOPiece[3] == "O" && onlyOPiece[4] == "O" && onlyOPiece[5] == "O" && trigger == true) {
+    winO = true;
+    trigger = false;
+  } 
+  if (onlyOPiece[6] == "O" && onlyOPiece[7] == "O" && onlyOPiece[8] == "O" && trigger == true) {
+    winO = true;
+    trigger = false;
+  } 
+  if (onlyOPiece[0] == "O" && onlyOPiece[4] == "O" && onlyOPiece[8] == "O" && trigger == true) {
+    winO = true;
+    trigger = false;
+  } 
+  if (onlyOPiece[2] == "O" && onlyOPiece[4] == "O" && onlyOPiece[6] == "O" && trigger == true) {
+    winO = true;
+    trigger = false;
+  } 
+  return winO;
+}

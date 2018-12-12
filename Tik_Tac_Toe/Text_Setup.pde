@@ -14,9 +14,6 @@ String exitButton;
 
 PFont levelFont, xoFont, playerFont, scoreFont;
 
-int xWin = 0, oWin = 0, count = 0, position; //count might work to replace boardPieces in gamePieces in Game_Pieces
-Boolean[] noDraw = new Boolean[9]; 
-
 void Fonts () {
   //Load a Font
   levelFont = createFont ("Cambria", 55);
