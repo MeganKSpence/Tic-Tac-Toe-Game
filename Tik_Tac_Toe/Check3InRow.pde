@@ -19,7 +19,7 @@ void check3InRow() {
   checkNestedFORO();
   checkNestedFORX();
   if (winX == true && trigger2 == true) {
-    //println("X won!"); //Need to set winX as false again and then also simultaniusly stop or "break" the code from running again
+    println("X won!"); //Need to set winX as false again and then also simultaniusly stop or "break" the code from running again
     trigger2 = false;
   } else if (winO == true && trigger2 == true) {
     println("O won!");
@@ -49,22 +49,21 @@ void onlyO() {
 void scoreboardCount() {
   if (winX == true && trigger3 == true) {
     xWin = xWin + 1;
-   // println(xWin);
+    trigger3 = false;
     fill(0);
     textAlign(CENTER, CENTER);
     textFont(xoFont, 40);
     text(str(xWin), width*2/10, height*13/24, width*3/20, height*1/6);
     fill(255);
-    trigger3 = false;
   }
   if (winO == true && trigger3 == true) {
     oWin = oWin + 1;
+    trigger3 = false;
     fill(0);
     textAlign(CENTER, CENTER);
     textFont(xoFont, 40);
     text(str(oWin), width*2/10, height*19/24, width*3/20, height*1/6);
     fill(255);
-    trigger3 = false;
   }
 }
 
