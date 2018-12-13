@@ -31,6 +31,13 @@ void resetProgram_Play() { //In this progeram we need to keep the score while re
         fill(#FFFFFF);
         rect(width*2/5, height*0, width*1/5, height*1/3);
       }
+      if (boardPiece[1] == "X") {
+        fill(#FFFFFF);
+        rect(width*3/5, height*0, width*1/5, height*1/3);
+      } else if (boardPiece[1] == "O") {
+        fill(#FFFFFF);
+        rect(width*3/5, height*0, width*1/5, height*1/3);
+      }
       
     }
   }
