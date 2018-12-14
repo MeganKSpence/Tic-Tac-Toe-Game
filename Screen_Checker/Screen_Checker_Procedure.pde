@@ -1,4 +1,4 @@
-float sizeGeometry, monitorGeometry;
+/*float sizeGeometry, monitorGeometry;
 
 void screenChecker() {
   println("Canvas Dimensions:\twidth", "\t", width, "\theight", "\t", height);
@@ -40,4 +40,4 @@ void screenChecker() {
     println("Program is closing automatically.\n");
     exit();
   }
-}
+} */
