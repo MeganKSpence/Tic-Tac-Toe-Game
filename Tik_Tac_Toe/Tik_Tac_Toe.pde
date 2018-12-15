@@ -33,6 +33,8 @@ void draw () {
   scoreboardCount();
   textDraw(); 
   Quit_Button();
+  resetButtonColor();
+  EasyAI();
 }
 
 

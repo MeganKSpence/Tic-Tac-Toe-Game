@@ -26,7 +26,7 @@ void textDraw() {
   }
 
   //when board is full, reset button will change color
-  resetButtonColor();
+//  resetButtonColor();
 }  
 
 void xoText (String text, int position) {
