@@ -6,8 +6,11 @@ boolean winO = false;
 boolean trigger = true;
 boolean trigger2 = true;
 boolean trigger3 = true;
+boolean trigger4 = true;
+boolean trigger5 = true; 
 
 int numberOfBoardPieces = 9;
+int resetTrigger = 0; 
 
 String[] boardPiece = new String[numberOfBoardPieces]; 
 String[] onlyXPiece = new String[numberOfBoardPieces];
@@ -18,13 +21,15 @@ void check3InRow() {
   onlyX();
   checkNestedFORO();
   checkNestedFORX();
-  if (winX == true && trigger2 == true) {
+  if (winX == true && trigger2 == true && trigger5 == true) {
     println("X won!"); //Need to set winX as false again and then also simultaniusly stop or "break" the code from running again
     trigger2 = false;
-  } else if (winO == true && trigger2 == true) {
+  } 
+  if (winO == true && trigger2 == true && trigger5 == true) {
     println("O won!");
     trigger2 = false;
-  } else if (count == 9 && trigger2 == true) {
+  } 
+  if (count == 9 && trigger2 == true && trigger5 == true && tieActivator == true) {
     println("You Tied!");
     trigger2 = false;
   }
@@ -47,7 +52,9 @@ void onlyO() {
 } 
 
 void scoreboardCount() {
-  if (winX == true && trigger3 == true) {
+  if (winX == true && trigger3 == true && trigger4 == true) {
+    fill(255);
+    rect(width*2/10, height*13/24, width*3/20, height*1/6);
     xWin = xWin + 1;
     trigger3 = false;
     fill(0);
@@ -55,8 +62,11 @@ void scoreboardCount() {
     textFont(xoFont, 40);
     text(str(xWin), width*2/10, height*13/24, width*3/20, height*1/6);
     fill(255);
+    trigger4 = false;
   }
-  if (winO == true && trigger3 == true) {
+  if (winO == true && trigger3 == true && trigger4 == true) {
+    fill(255);
+    rect(width*2/10, height*19/24, width*3/20, height*1/6);
     oWin = oWin + 1;
     trigger3 = false;
     fill(0);
@@ -64,6 +74,7 @@ void scoreboardCount() {
     textFont(xoFont, 40);
     text(str(oWin), width*2/10, height*19/24, width*3/20, height*1/6);
     fill(255);
+    trigger4 = false;
   }
 }
 

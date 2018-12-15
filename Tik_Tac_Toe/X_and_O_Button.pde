@@ -10,6 +10,7 @@ boolean positionTrigger6 = false;
 boolean positionTrigger7 = false;
 boolean positionTrigger8 = false;
 boolean positionTrigger9 = false;
+boolean tieActivator = false;
 
 //String triggerText = "O";
 
@@ -17,6 +18,9 @@ void textDraw() {
 
   if (count == 1 || count == 3 || count == 5 || count == 7 || count == 9) {
     xoText(X, position); //You cannot get rid of this text when trying to make X bigger //put boardpiece == x in this area?
+    if (count == 9) {
+      tieActivator = true;
+    }
   } else {
     xoText(O, position); //You cannot get rid of this text when trying to make O bigger
   }
@@ -32,7 +36,7 @@ void xoText (String text, int position) {
   fill(0);
   textAlign(CENTER, CENTER);
   textFont(xoFont, 40);
-
+  
   if (position == 1 && trigger2 == true && positionTrigger == false) {
     text(text, width*2/5, height*0, width*1/5, height*1/3);
     boardPiece[0] = text;

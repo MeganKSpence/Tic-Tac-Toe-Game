@@ -42,8 +42,5 @@ void mouseClicked () {
   exitButtonMouseClicked();
   xoButtonDraw();
   resetProgram_Play();
-  if (winX == true || winO == true) { //if statement not needed for final project, but it's a nice touch
-  } else {
-    println(" Position:", position, "Count:", count);
-  }
+  Modes(); 
 }
