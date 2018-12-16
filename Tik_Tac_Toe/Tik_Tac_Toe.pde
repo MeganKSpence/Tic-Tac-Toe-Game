@@ -35,6 +35,7 @@ void draw () {
   Quit_Button();
   resetButtonColor();
   EasyAI();
+  MediumAI();
 }
 
 
