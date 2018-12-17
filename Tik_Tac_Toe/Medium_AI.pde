@@ -139,10 +139,11 @@ void MediumAI () {
       println("17 has been activated");
     }
     mediumUsed();
-    for (int i = 1; i < 9; i++) {
+    for (int i = 0; i < 9; i++) {
       mediumModeArray[0] = (int)random(10);
+      // println(mediumUsed[i], i);
       // println("current number: ", mediumModeArray[0]);
-      if (mediumRandomTrigger == true && countAllow == false && mediumModeArray[0] != 0 || mediumUsed[i] != true && mediumRandomTrigger == true && countAllow == false) {
+      if (mediumModeArray[0] != alreadyUsed[0] && mediumRandomTrigger == true && countAllow == false || mediumModeArray[0] != 0 && mediumRandomTrigger == true && countAllow == false) {
         position = mediumModeArray[0];
         println("countAllow :", countAllow, "mediumModeArray :", mediumModeArray[0], "position: ", position);
         mediumRandomTrigger = false;
@@ -150,14 +151,15 @@ void MediumAI () {
         count++;
         // println("new number: ", mediumModeArray[0]);
       } else if (mediumRandomTrigger == true && countAllow == false && mediumModeArray[0] == 0 || mediumUsed[i] == true && mediumRandomTrigger == true && countAllow == false) {
-        println("DUN, DUN, DUN!!!");
+        mediumModeArray[0] = (int)random(10);
+        println("First line didn't work. reprinting");
       }
-      
     }
     mediumRandomTrigger = true;
   }
 }
-//  }
+
+
 
 void countAllow() {
   if (count == 1 || count == 3 || count == 5 || count == 7 || count == 9) {
@@ -171,38 +173,38 @@ void countAllow() {
 void mediumUsed() {
   if (boardPiece[0] == "X" || boardPiece[0] == "O") {
     mediumUsed[0] = true;
-//    println("1 has been activated");
+    //    println("1 has been activated");
   }
   if (boardPiece[1] == "X" || boardPiece[1] == "O") {
     mediumUsed[1] = true;
-//    println("2 has been activated");
+    //    println("2 has been activated");
   }
   if (boardPiece[2] == "X" || boardPiece[2] == "O") {
     mediumUsed[2] = true;
-//    println("3 has been activated");
+    //    println("3 has been activated");
   }
   if (boardPiece[3] == "X" || boardPiece[3] == "O") {
     mediumUsed[3] = true;
-//    println("4 has been activated");
+    //    println("4 has been activated");
   }
   if (boardPiece[4] == "X" || boardPiece[4] == "O") {
     mediumUsed[4] = true;
-//    println("5 has been activated");
+    //    println("5 has been activated");
   }
   if (boardPiece[5] == "X" || boardPiece[5] == "O") {
     mediumUsed[5] = true;
-//    println("6 has been activated");
+    //    println("6 has been activated");
   }
   if (boardPiece[6] == "X" || boardPiece[6] == "O") {
     mediumUsed[6] = true;
-//    println("7 has been activated");
+    //    println("7 has been activated");
   }
   if (boardPiece[7] == "X" || boardPiece[7] == "O") {
     mediumUsed[7] = true;
-//    println("8 has been activated");
+    //    println("8 has been activated");
   }
   if (boardPiece[8] == "X" || boardPiece[8] == "O") {
     mediumUsed[8] = true;
-//    println("9 has been activated");
+    //    println("9 has been activated");
   }
 } 
