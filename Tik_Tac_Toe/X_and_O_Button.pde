@@ -16,7 +16,7 @@ boolean tieActivator = false;
 
 void textDraw() {
 
-  if (count == 1 || count == 3 || count == 5 || count == 7 || count == 9) {
+  if (count % 2 == 1) {
     xoText(X, position); //You cannot get rid of this text when trying to make X bigger //put boardpiece == x in this area?
     if (count == 9) {
       tieActivator = true;

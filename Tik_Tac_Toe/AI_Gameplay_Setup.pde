@@ -7,12 +7,12 @@ void Modes() {
     if (boardPiece[0] == null && boardPiece[1] == null && boardPiece[2] == null && boardPiece[3] == null && boardPiece[4] == null && boardPiece[5] == null && boardPiece[6] == null && boardPiece[7] == null && boardPiece[8] == null) {
       fill(white2);
       rect(width*0, height*0, titleWidth, titleHeight);
-      Text_Setup(easy, levelFont, height, 0, CENTER, CENTER, width*0, height*0, titleWidth, titleHeight);
       fill(white);
       rect(width*0, height*1/12, width*2/5, height*1/12); 
-      Text_Setup(medium, levelFont, height, 0, CENTER, CENTER, width*0, height*1/12, titleWidth, titleHeight);
       rect(width*0, height*2/12, titleWidth, titleHeight);
+      Text_Setup(medium, levelFont, height, 0, CENTER, CENTER, width*0, height*1/12, titleWidth, titleHeight);
       Text_Setup(hard, levelFont, height, 0, CENTER, CENTER, width*0, height*2/12, titleWidth, titleHeight);
+      Text_Setup(easy, levelFont, height, 0, CENTER, CENTER, width*0, height*0, titleWidth, titleHeight);
       easyTrigger = true;
       mediumTrigger = false;
       hardTrigger = false;

@@ -45,5 +45,6 @@ void mouseClicked () {
   exitButtonMouseClicked();
   xoButtonDraw();
   resetProgram_Play();
-  Modes(); 
+  Modes();
+//  Modes();
 }
