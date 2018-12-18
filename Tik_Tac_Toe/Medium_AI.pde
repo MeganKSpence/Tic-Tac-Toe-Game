@@ -1,8 +1,8 @@
 boolean[] mediumModeTrigger = new boolean[18];
 boolean countAllow;
 boolean mediumRandomTrigger;
-boolean [] mediumUsed = new boolean[9];
 
+int [] mediumUsed = new int[9];
 int[] mediumModeArray = new int[1];
 
 void MediumAI () {
@@ -137,24 +137,32 @@ void MediumAI () {
       mediumRandomTrigger = false;
       println("17 has been activated");
     }
-    mediumUsed();
+ /*   mediumUsed();
     mediumModeArray[0] = (int)random(1, 10);
     //println("Starting number: ", mediumModeArray[0]);
-    for (int i = 1; i < 9; i++) {
-      if (mediumUsed[i] != true && mediumRandomTrigger == true && countAllow == false) { // note, change mediumUsed to an interager and write it out by hand
+    if (mediumRandomTrigger == true && countAllow == false) { // note, change mediumUsed to an interager and write it out by hand
+      if (mediumModeArray[0] != mediumUsed[0] || mediumModeArray[0] != mediumUsed[1] || mediumModeArray[0] != mediumUsed[2] || mediumModeArray[0] != mediumUsed[3] || mediumModeArray[0] != mediumUsed[4] || mediumModeArray[0] != mediumUsed[5] || mediumModeArray[0] != mediumUsed[6] || mediumModeArray[0] != mediumUsed[7] || mediumModeArray[0] != mediumUsed[8]) {
         position = mediumModeArray[0];
-        println("countAllow :", countAllow, "mediumModeArray :", mediumModeArray[0], "position: ", position);
+        for (int i = 0; i < 8; i++) {
+          println("countAllow :", countAllow, "mediumModeArray :", mediumModeArray[0], "mediumUsed :", mediumUsed[i]);
+        }
         mediumRandomTrigger = false;
-        println(mediumUsed[i], i);
         count++;
         // println("new number: ", mediumModeArray[0]);
-      } else if (mediumRandomTrigger == true && countAllow == false && mediumModeArray[0] == 0 || mediumUsed[i] == true && mediumRandomTrigger == true && countAllow == false) {
+      } else if (mediumModeArray[0] == mediumUsed[0] || mediumModeArray[0] == mediumUsed[1] || mediumModeArray[0] == mediumUsed[2] || mediumModeArray[0] == mediumUsed[3] || mediumModeArray[0] == mediumUsed[4] || mediumModeArray[0] == mediumUsed[5] || mediumModeArray[0] == mediumUsed[6] || mediumModeArray[0] == mediumUsed[7] || mediumModeArray[0] == mediumUsed[8]) {
         mediumModeArray[0] = (int)random(1, 10);
         println("First number didn't work, gonna retry");
         println("new number is: ", mediumModeArray[0]);
-      }
-    }
-    mediumRandomTrigger = true;
+      } 
+    } */
+   //mediumRandomTrigger = true;
+   already_Used();
+   if (mediumRandomTrigger == true && countAllow == false) {
+     RandomAI();
+     mediumRandomTrigger = false;
+     
+   }
+   mediumRandomTrigger = true;
   }
 }
 //  }
@@ -170,39 +178,39 @@ void countAllow() {
 
 void mediumUsed() {
   if (boardPiece[0] == "X" || boardPiece[0] == "O") {
-    mediumUsed[0] = true;
+    mediumUsed[0] = 1;
     //    println("1 has been activated");
   }
   if (boardPiece[1] == "X" || boardPiece[1] == "O") {
-    mediumUsed[1] = true;
+    mediumUsed[1] = 2;
     //    println("2 has been activated");
   }
   if (boardPiece[2] == "X" || boardPiece[2] == "O") {
-    mediumUsed[2] = true;
+    mediumUsed[2] = 3;
     //    println("3 has been activated");
   }
   if (boardPiece[3] == "X" || boardPiece[3] == "O") {
-    mediumUsed[3] = true;
+    mediumUsed[3] = 4;
     //    println("4 has been activated");
   }
   if (boardPiece[4] == "X" || boardPiece[4] == "O") {
-    mediumUsed[4] = true;
+    mediumUsed[4] = 5;
     //    println("5 has been activated");
   }
   if (boardPiece[5] == "X" || boardPiece[5] == "O") {
-    mediumUsed[5] = true;
+    mediumUsed[5] = 6;
     //    println("6 has been activated");
   }
   if (boardPiece[6] == "X" || boardPiece[6] == "O") {
-    mediumUsed[6] = true;
+    mediumUsed[6] = 7;
     //    println("7 has been activated");
   }
   if (boardPiece[7] == "X" || boardPiece[7] == "O") {
-    mediumUsed[7] = true;
+    mediumUsed[7] = 8;
     //    println("8 has been activated");
   }
   if (boardPiece[8] == "X" || boardPiece[8] == "O") {
-    mediumUsed[8] = true;
+    mediumUsed[8] = 9;
     //    println("9 has been activated");
   }
 }
