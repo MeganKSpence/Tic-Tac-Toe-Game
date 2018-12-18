@@ -1,6 +1,7 @@
 //Varables
 float titleWidth;
 float titleHeight; 
+
 String easy;
 String medium; 
 String hard;
@@ -15,7 +16,6 @@ String exitButton;
 PFont levelFont, xoFont, playerFont, scoreFont;
 
 void Fonts () {
-  //Load a Font
   levelFont = createFont ("Cambria", 55);
   xoFont = createFont ("BlackoakStd", 55);
   playerFont = createFont ("Algerian", 55);
@@ -23,7 +23,6 @@ void Fonts () {
 }
 
 void stringVariables() {
-  //Strign variables
   easy = "Easy";
   medium = "Medium";
   hard = "Hard";
@@ -39,7 +38,6 @@ void stringVariables() {
 }
 
 void Text_Setup(String string, PFont font, float height, color ink, int alignHorizontal, int alignVertical, float rectX, float rectY, float rectWidth, float rectHeight) {
-
   Fonts();
   float fontSize = height;
   fill(ink);
@@ -54,7 +52,7 @@ void Text_Setup(String string, PFont font, float height, color ink, int alignHor
   } else {
     fontSize = fontSize * 0.16;
   } 
-
+  
   textFont(font, fontSize);
   text(string, rectX, rectY, rectWidth, rectHeight);
   fill(255);
@@ -78,9 +76,6 @@ void Text() {
   Text_Setup(hard, levelFont, height, 0, CENTER, CENTER, width*0, height*2/12, titleWidth, titleHeight);
   Text_Setup(start, levelFont, height, 0, CENTER, CENTER, width*0, height*3/12, titleWidth, titleHeight);
   Text_Setup(restart, levelFont, height, 0, CENTER, CENTER, width*0, height*4/12, titleWidth, titleHeight);
-  // Text_Setup(exitButton, levelFont, height, 0, CENTER, CENTER, width*0, height*5/12, titleWidth, titleHeight); //This line of code is active in Quit_Button
   Text_Setup(player1, playerFont, height, 0, CENTER, CENTER, width*0, height*6/12, width*2/10, height*3/12); 
   Text_Setup(player2, playerFont, height, 0, CENTER, CENTER, width*0, height*9/12, width*2/10, height*3/12); 
-  // Text_Setup(str(xWin), xoFont, height, 0, CENTER, CENTER, width*2/10, height*13/24, width*3/20, height*1/6); //line 22 and 23, ask Mercer how you would go about doing this
-  // Text_Setup(str(oWin), xoFont, height, 0, CENTER, CENTER, width*2/10, height*19/24, width*3/20, height*1/6); 
 }

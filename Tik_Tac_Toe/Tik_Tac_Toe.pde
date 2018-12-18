@@ -1,8 +1,8 @@
 // Main divisions
 void setup() {
   //blank page setup
-  size(600, 400);
-  //fullScreen();
+  //size(600, 400);
+  fullScreen();
   background(255);
 
   //calling other "voids" from other pages
