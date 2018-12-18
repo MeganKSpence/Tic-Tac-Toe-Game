@@ -2,7 +2,7 @@ boolean[] mediumModeTrigger = new boolean[18];
 boolean countAllow;
 boolean mediumRandomTrigger;
 
-int [] mediumUsed = new int[9];
+int[] mediumUsed = new int[9];
 int[] mediumModeArray = new int[1];
 
 void MediumAI () {
@@ -137,32 +137,24 @@ void MediumAI () {
       mediumRandomTrigger = false;
       println("17 has been activated");
     }
- /*   mediumUsed();
+    mediumUsed();
     mediumModeArray[0] = (int)random(1, 10);
-    //println("Starting number: ", mediumModeArray[0]);
-    if (mediumRandomTrigger == true && countAllow == false) { // note, change mediumUsed to an interager and write it out by hand
-      if (mediumModeArray[0] != mediumUsed[0] || mediumModeArray[0] != mediumUsed[1] || mediumModeArray[0] != mediumUsed[2] || mediumModeArray[0] != mediumUsed[3] || mediumModeArray[0] != mediumUsed[4] || mediumModeArray[0] != mediumUsed[5] || mediumModeArray[0] != mediumUsed[6] || mediumModeArray[0] != mediumUsed[7] || mediumModeArray[0] != mediumUsed[8]) {
-        position = mediumModeArray[0];
-        for (int i = 0; i < 8; i++) {
-          println("countAllow :", countAllow, "mediumModeArray :", mediumModeArray[0], "mediumUsed :", mediumUsed[i]);
+    for (int i = 0; i < 8; i++) {
+      if (mediumRandomTrigger == true && countAllow == false && count != 10) { // note, change mediumUsed to an interager and write it out by hand
+        if (mediumModeArray[0] != mediumUsed[i]) {//|| mediumModeArray[0] != mediumUsed[1] || mediumModeArray[0] != mediumUsed[2] || mediumModeArray[0] != mediumUsed[3] || mediumModeArray[0] != mediumUsed[4] || mediumModeArray[0] != mediumUsed[5] || mediumModeArray[0] != mediumUsed[6] || mediumModeArray[0] != mediumUsed[7] || mediumModeArray[0] != mediumUsed[8]) {
+          position = mediumModeArray[0];
+          println("mediumModeArray: ", mediumModeArray[0], "mediumUsed: ", mediumUsed[i]);
+          mediumRandomTrigger = false;
+          count++;
+        } else if (mediumModeArray[0] == mediumUsed[0] || mediumModeArray[0] == mediumUsed[1] || mediumModeArray[0] == mediumUsed[2] || mediumModeArray[0] == mediumUsed[3] || mediumModeArray[0] == mediumUsed[4] || mediumModeArray[0] == mediumUsed[5] || mediumModeArray[0] == mediumUsed[6] || mediumModeArray[0] == mediumUsed[7] || mediumModeArray[0] == mediumUsed[8]) {
+          mediumModeArray[0] = (int)random(1, 10);
+          println("First number didn't work, gonna retry");
+          println("new number is: ", mediumModeArray[0]);
         }
-        mediumRandomTrigger = false;
-        count++;
-        // println("new number: ", mediumModeArray[0]);
-      } else if (mediumModeArray[0] == mediumUsed[0] || mediumModeArray[0] == mediumUsed[1] || mediumModeArray[0] == mediumUsed[2] || mediumModeArray[0] == mediumUsed[3] || mediumModeArray[0] == mediumUsed[4] || mediumModeArray[0] == mediumUsed[5] || mediumModeArray[0] == mediumUsed[6] || mediumModeArray[0] == mediumUsed[7] || mediumModeArray[0] == mediumUsed[8]) {
-        mediumModeArray[0] = (int)random(1, 10);
-        println("First number didn't work, gonna retry");
-        println("new number is: ", mediumModeArray[0]);
-      } 
-    } */
-   //mediumRandomTrigger = true;
-   already_Used();
-   if (mediumRandomTrigger == true && countAllow == false) {
-     RandomAI();
-     mediumRandomTrigger = false;
-     
-   }
-   mediumRandomTrigger = true;
+      }
+    }
+    mediumRandomTrigger = true;
+   // println("Count: ", count);
   }
 }
 //  }
