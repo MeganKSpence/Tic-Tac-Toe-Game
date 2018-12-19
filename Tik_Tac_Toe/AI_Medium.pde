@@ -1,6 +1,6 @@
 boolean[] mediumModeTrigger = new boolean[18];
 boolean countAllow;
-boolean mediumRandomTrigger;
+boolean mediumRandomTrigger = true;
 
 int[] mediumUsed = new int[9];
 int[] mediumModeArray = new int[1];
@@ -8,6 +8,7 @@ int[] mediumModeArray = new int[1];
 void MediumAI () {
   if (mediumTrigger == true) {
     countAllow();
+    mediumRandomTrigger = true;
     if (boardPiece[0] == "X" && boardPiece[3] == "X" && mediumModeTrigger[0] == false && countAllow == false && boardPiece[6] != "O") {
       count++;
       position = 7;
@@ -140,28 +141,31 @@ void MediumAI () {
     mediumUsed();
     //mediumModeArray[0] = (int)random(1, 10);
     //println(mediumModeArray[0], "mediumModeArray"); //this can show us that mediumModeArray[0] will print random numbers every single frame
-  /*  for (int i = 0; i < 8; i++) {
-      //println(mediumUsed[i]); this proves that count numbers are only being created once an x or o is played within that position
-      if (mediumRandomTrigger == true && countAllow == false && count != 10) { // note, change mediumUsed to an interager and write it out by hand
-        if (mediumModeArray[0] != 0 || mediumModeArray[0] != mediumUsed[0] || mediumModeArray[0] != mediumUsed[1] || mediumModeArray[0] != mediumUsed[2] || mediumModeArray[0] != mediumUsed[3] || mediumModeArray[0] != mediumUsed[4] || mediumModeArray[0] != mediumUsed[5] || mediumModeArray[0] != mediumUsed[6] || mediumModeArray[0] != mediumUsed[7] || mediumModeArray[0] != mediumUsed[8]) {
-          position = mediumModeArray[0];
-          println("mediumModeArray: ", mediumModeArray[0], "mediumUsed: ", mediumUsed[i]);
-          mediumRandomTrigger = false;
-          count++;
-        } else if (mediumModeArray[0] == mediumUsed[0] || mediumModeArray[0] == mediumUsed[1] || mediumModeArray[0] == mediumUsed[2] || mediumModeArray[0] == mediumUsed[3] || mediumModeArray[0] == mediumUsed[4] || mediumModeArray[0] == mediumUsed[5] || mediumModeArray[0] == mediumUsed[6] || mediumModeArray[0] == mediumUsed[7] || mediumModeArray[0] == mediumUsed[8]) {
-          mediumModeArray[0] = (int)random(1, 10);
-          println("First number didn't work, gonna retry");
-          println("new number is: ", mediumModeArray[0]);
-        }
+    /*  for (int i = 0; i < 8; i++) {
+     //println(mediumUsed[i]); this proves that count numbers are only being created once an x or o is played within that position
+     if (mediumRandomTrigger == true && countAllow == false && count != 10) { // note, change mediumUsed to an interager and write it out by hand
+     if (mediumModeArray[0] != 0 || mediumModeArray[0] != mediumUsed[0] || mediumModeArray[0] != mediumUsed[1] || mediumModeArray[0] != mediumUsed[2] || mediumModeArray[0] != mediumUsed[3] || mediumModeArray[0] != mediumUsed[4] || mediumModeArray[0] != mediumUsed[5] || mediumModeArray[0] != mediumUsed[6] || mediumModeArray[0] != mediumUsed[7] || mediumModeArray[0] != mediumUsed[8]) {
+     position = mediumModeArray[0];
+     println("mediumModeArray: ", mediumModeArray[0], "mediumUsed: ", mediumUsed[i]);
+     mediumRandomTrigger = false;
+     count++;
+     } else if (mediumModeArray[0] == mediumUsed[0] || mediumModeArray[0] == mediumUsed[1] || mediumModeArray[0] == mediumUsed[2] || mediumModeArray[0] == mediumUsed[3] || mediumModeArray[0] == mediumUsed[4] || mediumModeArray[0] == mediumUsed[5] || mediumModeArray[0] == mediumUsed[6] || mediumModeArray[0] == mediumUsed[7] || mediumModeArray[0] == mediumUsed[8]) {
+     mediumModeArray[0] = (int)random(1, 10);
+     println("First number didn't work, gonna retry");
+     println("new number is: ", mediumModeArray[0]);
+     }
+     }
+     } */
+    if (mediumRandomTrigger == true && countAllow == false && count != 9) { //you can say that count != 9 because AI only plays O's, and X's always will play on count of 9 so we dont need to worry about something not playing
+      if (mediumModeArray[0] != 0) {
+        println("I'm not equal to 0... right?", mediumModeArray[0]);
+        println("count: ", count);
+      } else if (mediumModeArray[0] == 0) {
+        println("I'm equal to 0... right?", mediumModeArray[0]);
+        mediumModeArray[0] = (int)random(1, 10);
       }
-    } */
-    if (mediumModeArray[0] != 0) {
-      println("I'm not equal to 0... right?", mediumModeArray[0]);
-    } else if (mediumModeArray[0] == 0) {
-      println("I'm equal to 0... right?", mediumModeArray[0]);
-      mediumModeArray[0] = 1;
     }
-    mediumRandomTrigger = true;
+    println("mediumRandomTrigger: ", mediumRandomTrigger);
   }
 }
 
