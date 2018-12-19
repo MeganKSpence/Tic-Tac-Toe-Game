@@ -24,6 +24,7 @@ void draw () {
   resetButtonColor();
   EasyAI();
   MediumAI();
+  HardAI();
 }
 
 
