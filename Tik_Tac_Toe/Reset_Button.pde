@@ -27,7 +27,7 @@ void resetProgram_Play() { //In this progeram we need to keep the score while re
       positionTrigger6 = false;
       positionTrigger7 = false;
       positionTrigger8 = false;
-      positionTrigger9 = false;
+      positionTrigger9 = false; 
 
       for (int i = 0; i < 9; i++) {
         noDraw[i] = false;

@@ -54,14 +54,11 @@ void onlyO() {
 void scoreboardCount() {
   if (winX == true && trigger3 == true && trigger4 == true) {
     fill(255);
-    rect(width*2/10, height*13/24, width*3/20, height*1/6);
+   // rect(width*2/10, height*13/24, width*3/20, height*1/6);
     xWin = xWin + 1;
-    trigger3 = false;
-    fill(0);
-    textAlign(CENTER, CENTER);
-    textFont(xoFont, 40);
-    text(str(xWin), width*2/10, height*13/24, width*3/20, height*1/6);
+    Text_Setup(str(xWin), scoreFont, height, 0, CENTER, CENTER, width*2/10, height*13/24, width*3/20, height*1/6);
     fill(255);
+    trigger3 = false;
     trigger4 = false;
   }
   if (winO == true && trigger3 == true && trigger4 == true) {

@@ -138,10 +138,12 @@ void MediumAI () {
       println("17 has been activated");
     }
     mediumUsed();
-    mediumModeArray[0] = (int)random(1, 10);
-    for (int i = 0; i < 8; i++) {
+    //mediumModeArray[0] = (int)random(1, 10);
+    //println(mediumModeArray[0], "mediumModeArray"); //this can show us that mediumModeArray[0] will print random numbers every single frame
+  /*  for (int i = 0; i < 8; i++) {
+      //println(mediumUsed[i]); this proves that count numbers are only being created once an x or o is played within that position
       if (mediumRandomTrigger == true && countAllow == false && count != 10) { // note, change mediumUsed to an interager and write it out by hand
-        if (mediumModeArray[0] != mediumUsed[i]) {//|| mediumModeArray[0] != mediumUsed[1] || mediumModeArray[0] != mediumUsed[2] || mediumModeArray[0] != mediumUsed[3] || mediumModeArray[0] != mediumUsed[4] || mediumModeArray[0] != mediumUsed[5] || mediumModeArray[0] != mediumUsed[6] || mediumModeArray[0] != mediumUsed[7] || mediumModeArray[0] != mediumUsed[8]) {
+        if (mediumModeArray[0] != 0 || mediumModeArray[0] != mediumUsed[0] || mediumModeArray[0] != mediumUsed[1] || mediumModeArray[0] != mediumUsed[2] || mediumModeArray[0] != mediumUsed[3] || mediumModeArray[0] != mediumUsed[4] || mediumModeArray[0] != mediumUsed[5] || mediumModeArray[0] != mediumUsed[6] || mediumModeArray[0] != mediumUsed[7] || mediumModeArray[0] != mediumUsed[8]) {
           position = mediumModeArray[0];
           println("mediumModeArray: ", mediumModeArray[0], "mediumUsed: ", mediumUsed[i]);
           mediumRandomTrigger = false;
@@ -152,12 +154,16 @@ void MediumAI () {
           println("new number is: ", mediumModeArray[0]);
         }
       }
+    } */
+    if (mediumModeArray[0] != 0) {
+      println("I'm not equal to 0... right?", mediumModeArray[0]);
+    } else if (mediumModeArray[0] == 0) {
+      println("I'm equal to 0... right?", mediumModeArray[0]);
+      mediumModeArray[0] = 1;
     }
     mediumRandomTrigger = true;
-   // println("Count: ", count);
   }
 }
-//  }
 
 void countAllow() {
   if (count == 1 || count == 3 || count == 5 || count == 7 || count == 9) {
