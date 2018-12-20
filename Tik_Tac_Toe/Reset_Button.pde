@@ -34,7 +34,7 @@ void resetProgram_Play() { //In this progeram we need to keep the score while re
       }
 
       println(boardPiece[0]); 
-      if (boardPiece[0] == "X" || boardPiece[0] == "O" || boardPiece[0] == null) {
+      if (boardPiece[0] == "X" || boardPiece[0] == "O" || boardPiece[0] == null) { //how about get rid of all of this and just use a reset function AND print the numbers again
         fill(#FFFFFF);
         rect(width*2/5, height*0, width*1/5, height*1/3);
       } 

@@ -396,6 +396,6 @@ void hardWin() {
      mediumModeTrigger[23] = true;
      mediumRandomTrigger = false;
      stopDraw = true;
-     } */
+     } 
   }
 }
