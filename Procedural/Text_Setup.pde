@@ -3,9 +3,9 @@ String title;
 PFont titleFont; //variable to hold the font type
 float titleWidth;
 float titleHeight;
-//float titleFontSize; 
-//String[] fontList = PFont.list(); //Lists all fonts available on system // should only need to be activated temporarily 
-//String titleFontString;
+float titleFontSize; 
+String[] fontList = PFont.list(); //Lists all fonts available on system // should only need to be activated temporarily 
+String titleFontString;
 float titleFontDecrease;   
 String footer; 
 String Assignment1;
@@ -20,12 +20,12 @@ void Text_Setup() {
   Assignment3 = "Assignment 3";
   titleWidth = width*1/2;
   titleHeight = height*1/10;
-  //titleFontSize = height; 
-  //String[] fontList = PFont.list(); //Lists all fonts available on system // should only need to be activated temporarily 
-  //titleFontString = "Harrington";
+  titleFontSize = height; 
+  String[] fontList = PFont.list(); //Lists all fonts available on system // should only need to be activated temporarily 
+  titleFontString = "Harrington";
   titleFontDecrease = 1;  //67%, 200|300; 57%, 200|200; 18%
 
-  //printArray(fontList); //Lists all possible fonts to choose, then createFont
+  printArray(fontList); //Lists all possible fonts to choose, then createFont
   titleFont = createFont ("Harrington", height); //Must also /create Font/ find Font/ NEVER!!!!!!!!! press ok DONT YOU DARE TOUCH IT, WILL BREAK INTERNET AROUND THE WORLD but it is tempting...*clicks on "OK"
 }
 
