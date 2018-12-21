@@ -1,3 +1,6 @@
+int[] sideRandom = new int[1];
+int[] sideNumbers = {2, 4, 6, 8};
+
 void HardAI() { //In this code there should be nothin randomized and everything should be stragically placed but in a somewhat efficient manner
   if (hardTrigger == true) {
     countAllow();
@@ -5,6 +8,15 @@ void HardAI() { //In this code there should be nothin randomized and everything 
     //println("I have been activated");
     //Defense rules
     //vertical defense
+    if (count == 1 && boardPiece[0] == "X" || count == 1 && boardPiece[2] == "X" || count == 1 && boardPiece[6] == "X" || count == 1 && boardPiece[8] == "X") {
+      position = 5;
+      count++;
+      stopDraw = true; 
+    } 
+    if (count == 3 && boardPiece[0] == "X" && boardPiece[8] == "X" || count == 3 && boardPiece[2] == "X" && boardPiece[6] == "X") { 
+      sideRandom[0] = (int)random(sideNumbers);
+    }
+
     if (boardPiece[0] == "O" && boardPiece[3] == "O" && mediumModeTrigger[0] == false && countAllow == false && stopDraw == false && boardPiece[6] != "X" && count < 9) { 
       count++;
       position = 7;
