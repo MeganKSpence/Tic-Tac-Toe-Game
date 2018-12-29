@@ -17,7 +17,7 @@ PFont levelFont, xoFont, playerFont, scoreFont;
 
 void Fonts () {
   levelFont = createFont ("Cambria", 55);
-  xoFont = createFont ("BlackoakStd", 55);
+  xoFont = createFont ("Century Gothic", 55);
   playerFont = createFont ("Algerian", 55);
   scoreFont = createFont ("Calibri", 55);
 }
