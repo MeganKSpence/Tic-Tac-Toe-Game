@@ -30,7 +30,7 @@ void stringVariables() {
   player2 = "O =";
   X = "X";
   O = "O";
-  start = "Start"; 
+  start = "No AI"; 
   restart = "Restart";
   exitButton = "Exit Game";
   titleWidth = width*2/5; 

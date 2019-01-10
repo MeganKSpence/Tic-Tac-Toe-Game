@@ -234,11 +234,10 @@ void HardAI() { //In this code there should be nothin randomized and everything 
         stopDraw = true;
       } 
       if (count == 3 && boardPiece[0] == "X" && boardPiece[8] == "X" || count == 3 && boardPiece[2] == "X" && boardPiece[6] == "X") { 
-        sideRandom[0] = (int)random(sideNumbers);
+       // sideRandom[0] = (int)random(sideNumbers);
       }
 
       if (boardPiece[0] == "O" && boardPiece[3] == "O" && mediumModeTrigger[0] == false && countAllow == false && stopDraw == false && boardPiece[6] != "X" && count < 9) { 
-        >>>>>>> dd82dc63de8bd32bbee86d6deb36b3fc048c4728
           count++;
         position = 7;
         mediumModeTrigger[0] = true;
@@ -808,12 +807,12 @@ void HardAI() { //In this code there should be nothin randomized and everything 
       }
 
 
-      //Special cases - this involves more random, yet strategic placement
+    /*  //Special cases - this involves more random, yet strategic placement
       //If O is in the middle - preventing double threats
       if (boardPiece[4] == "O" && stopDraw == false) {
         hardRandom[1] = (int)random(1, 10);
         if (hardRandom[1] =
-      }
+      } */
       //If X is in the middle - creating a double threat
     }
   }
