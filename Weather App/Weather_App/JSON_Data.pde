@@ -8,12 +8,15 @@ void buildingURL() {
   String baseURL_Current = "http://api.openweathermap.org/data/2.5/weather?";
   String baseURL_Forecast = "http://api.openweathermap.org/data/2.5/forecast?";
   String edmontonId = "id=5946768";
+  String calgaryId = "id=5913490";
   String apiKey = "APPID=6ae57189002ecfea2e94bc2e5de730ff"; //API Key is PRIVATE so not included here
   String mode = "mode=json";
   String unitMetric = "units=metric";
   String and = "&";
   String URLCurrentEdmonton = baseURL_Current + edmontonId + and + apiKey + and + mode + and + unitMetric;
   String URLForecastEdmonton = baseURL_Forecast + edmontonId + and + apiKey + and + mode + and + unitMetric;
+  String URLCurrentCalgary = baseURL_Current + calgaryId + and + apiKey + and + mode + and + unitMetric;
+  String URLForecastCalgary = baseURL_Forecast + calgaryId + and + apiKey + and + mode + and + unitMetric;
 
   jsonCurrentEdmonton = loadJSONObject(URLCurrentEdmonton); //Must be Global Variable
   jsonForecastEdmonton = loadJSONObject(URLForecastEdmonton);

@@ -3,12 +3,16 @@ float titleWidth;
 float titleHeight; 
 
 String Edmonton;
+String Calgary;
+String newMexico;
+String Florida;
 
 PFont selectionText;
 
 int pageChange = 1;
 
 color highlight = #B5E1F2;
+color stopRed = #F01124;
 
 void Fonts () {
   selectionText = createFont ("Cambria", 55);
@@ -16,6 +20,9 @@ void Fonts () {
 
 void variables() {
   Edmonton = "Edmonton";
+  Calgary = "Calgary";
+  newMexico = "New Mexico";
+  Florida = "Florida";
   titleWidth = width*3/8; //  2/5
   titleHeight = height*1/8;
 }
@@ -54,14 +61,57 @@ float textCalculator(float size, String string, float rectWidth) {
 }
 
 void Text() {
-  Text_Setup(Edmonton, selectionText, height, 0, CENTER, CENTER, width*0, height*1/8, titleWidth, titleHeight);
+  if (pageChange == 1) {
+    Text_Setup(Edmonton, selectionText, height, 0, CENTER, CENTER, width*0, height*1/8, titleWidth, titleHeight);
+    Text_Setup(Calgary, selectionText, height, 0, CENTER, CENTER, width*0, height*2/8, titleWidth, titleHeight);
+  }
+  if (pageChange == 2) {
+    Text_Setup(newMexico, selectionText, height, 0, CENTER, CENTER, width*0, height*1/8, titleWidth, titleHeight);
+    Text_Setup(Florida, selectionText, height, 0, CENTER, CENTER, width*0, height*2/8, titleWidth, titleHeight);
+  }
 }
 
-void pageTurn() {
-  if (mouseX > width*0 && mouseX < width*3/8 && mouseY > height*7/8 && mouseY < height*1) {
+void pageHighlight() {
+  if (mouseX > width*0 && mouseX < width*3/8 && mouseY > height*7/8 && mouseY < height*1 && pageChange < 3) {
     fill(highlight);
     rect(width*0, height*7/8, width*3/8, height*1/8);
   } else {
-    noFill(); 
+    noFill();
+  }
+  if (mouseX > width*0 && mouseX < width*3/8 && mouseY > height*0 && mouseY < height*1/8 && pageChange > 1) {
+    fill(highlight);
+    rect(width*0, height*0, width*3/8, height*1/8);
+  } else {
+    noFill();
+  }
+}
+
+void arrowBlock() {
+  if (pageChange == 1) {
+    stroke(stopRed);
+    strokeWeight(4);
+    noFill();
+    ellipse(90, 40, 50, 50);
+    line(70, 20, 110, 60);
+  }
+  if (pageChange == 3) {
+    stroke(stopRed);
+    strokeWeight(4);
+    noFill();
+    ellipse(90, 565, 50, 50);
+    line(70, 545, 112, 580);
+  }
+}
+
+void pageTurn() {
+  if (mouseX > width*0 && mouseX < width*3/8 && mouseY > height*7/8 && mouseY < height*1 && pageChange < 3) {
+    if (pageChange != 2);
+    pageChange = pageChange + 1;
+  }
+  if (mouseX > width*0 && mouseX < width*3/8 && mouseY > height*0 && mouseY < height*1/8 && pageChange < 4) {
+    if (pageChange != 1){
+    pageChange = pageChange - 1;
+    println("hey");
+    }
   }
 }

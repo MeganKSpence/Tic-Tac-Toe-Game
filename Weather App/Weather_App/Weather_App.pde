@@ -12,7 +12,15 @@ void setup() {
 void draw() {
   //Drawing Setup
   setGradient(0, 0, width, height, backgroundBlue, white);
-  pageTurn();
+  pageHighlight();
+  drawingDataHighlight();
+  drawingData();
   GUI_Setup();
+  arrowBlock();
   Text();
+}
+
+void mouseClicked() {
+  pageTurn();
+  mouseClickedData();
 }
