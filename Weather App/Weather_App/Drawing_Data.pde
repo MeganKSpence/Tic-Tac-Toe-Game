@@ -44,6 +44,7 @@ void mouseClickedData() {
   if (pageChange == 1) {
     if (mouseX > width*0 && mouseX < width*3/8 && mouseY > height*1/8 && mouseY < height*2/8) {
       drawData = 1;
+      forcastEnable = true; 
     } 
     if (mouseX > width*0 && mouseX < width*3/8 && mouseY > height*2/8 && mouseY < height*3/8) {
       drawData = 2;

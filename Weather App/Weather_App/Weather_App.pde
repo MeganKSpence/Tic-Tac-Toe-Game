@@ -14,13 +14,16 @@ void draw() {
   setGradient(0, 0, width, height, backgroundBlue, white);
   pageHighlight();
   drawingDataHighlight();
+  quitButtonHighlight();
   drawingData();
   GUI_Setup();
   arrowBlock();
+  currentVSForcast();
   Text();
 }
 
 void mouseClicked() {
   pageTurn();
   mouseClickedData();
+  quitButtonExit();
 }
