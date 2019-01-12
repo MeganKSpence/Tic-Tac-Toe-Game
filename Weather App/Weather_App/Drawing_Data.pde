@@ -65,10 +65,14 @@ void mouseClickedData() {
 }
 
 void drawingData() {
+  unwrappingData();
+  println(tempED);
+  println(tempEdmonton);
   if (pageChange == 1) {
     if (drawData == 1) {
       fill(highlight);
       rect(width*0, height*1/8, width*3/8, height*1/8);
+      Text_Setup(tempED, selectionText, height, 0, CENTER, CENTER, width*0, height*0, width*1/2, height*1/2);
     } 
     if (drawData == 2) {
       fill(highlight);

@@ -4,6 +4,9 @@ JSONObject jsonForecastEdmonton;
 
 import java.util.Date; 
 
+float tempEdmonton;
+String tempED = str(tempEdmonton);
+
 void buildingURL() {
   String baseURL_Current = "http://api.openweathermap.org/data/2.5/weather?";
   String baseURL_Forecast = "http://api.openweathermap.org/data/2.5/forecast?";
@@ -15,22 +18,32 @@ void buildingURL() {
   String and = "&";
   String URLCurrentEdmonton = baseURL_Current + edmontonId + and + apiKey + and + mode + and + unitMetric;
   String URLForecastEdmonton = baseURL_Forecast + edmontonId + and + apiKey + and + mode + and + unitMetric;
-  String URLCurrentCalgary = baseURL_Current + calgaryId + and + apiKey + and + mode + and + unitMetric;
-  String URLForecastCalgary = baseURL_Forecast + calgaryId + and + apiKey + and + mode + and + unitMetric;
+  //String URLCurrentCalgary = baseURL_Current + calgaryId + and + apiKey + and + mode + and + unitMetric;
+  //String URLForecastCalgary = baseURL_Forecast + calgaryId + and + apiKey + and + mode + and + unitMetric;
 
   jsonCurrentEdmonton = loadJSONObject(URLCurrentEdmonton); //Must be Global Variable
   jsonForecastEdmonton = loadJSONObject(URLForecastEdmonton);
 }
 
 void unwrappingData() {
- long dt = jsonCurrentEdmonton.getInt("dt"); //must be 64-bit value, not 32-bit
+  //Edmonton
+  long dt = jsonCurrentEdmonton.getInt("dt"); //must be 64-bit value, not 32-bit
   Date dateHuman = new Date(dt*1000); //convert from milliseconds
   println(dateHuman);
+
   JSONObject main = jsonCurrentEdmonton.getJSONObject("main"); //Unwrap {}
-  float temp = main.getFloat("temp");
-  println(temp);
+  tempEdmonton = main.getFloat("temp");
+  //println(tempEdmonton);
+  //String tempED = str(tempEdmonton);
+  println(tempED);
+  //return tempED;
+  //return tempEdmonton;
+
   JSONArray weather = jsonCurrentEdmonton.getJSONArray("weather"); // Unwrap []
   JSONObject all = weather.getJSONObject(0); //Unwrap {}
   String description = all.getString("description");
   println (description);
+}
+
+void TurningString() {
 }

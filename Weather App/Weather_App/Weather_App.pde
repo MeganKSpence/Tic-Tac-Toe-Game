@@ -15,6 +15,7 @@ void draw() {
   pageHighlight();
   drawingDataHighlight();
   quitButtonHighlight();
+  changeForcastHighlight();
   drawingData();
   GUI_Setup();
   arrowBlock();
@@ -26,4 +27,5 @@ void mouseClicked() {
   pageTurn();
   mouseClickedData();
   quitButtonExit();
+  changeForcast();
 }

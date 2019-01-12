@@ -2,12 +2,6 @@
 float titleWidth;
 float titleHeight; 
 
-String Exit;
-String Forcast;
-String Current;
-String page1;
-String page2;
-String page3;
 String Edmonton;
 String Calgary;
 String newMexico;
@@ -15,17 +9,16 @@ String Florida;
 
 PFont selectionText;
 
+int pageChange = 1;
+
+color highlight = #B5E1F2;
+color stopRed = #F01124;
+
 void Fonts () {
   selectionText = createFont ("Cambria", 55);
 }
 
 void variables() {
-  Exit = "Exit";
-  Forcast = "See Forcast";
-  Current = "Current Weather";
-  page1 = "Page 1/3";
-  page2 = "Page 2/3";
-  page3 = "Page 3/3";
   Edmonton = "Edmonton";
   Calgary = "Calgary";
   newMexico = "New Mexico";
@@ -45,7 +38,7 @@ void Text_Setup(String string, PFont font, float height, color ink, int alignHor
     fontSize = textCalculator(height, string, titleWidth);
   } else if (string.length() >= 4) {
     // catch for string less than 13 characters
-    fontSize = fontSize * 0.04; //change number as needed
+    fontSize = fontSize * 0.06; //change number as needed
   } else {
     fontSize = fontSize * 0.16;
   } 
@@ -68,19 +61,13 @@ float textCalculator(float size, String string, float rectWidth) {
 }
 
 void Text() {
-  Text_Setup(Exit, selectionText, height, 0, CENTER, CENTER, width*6/8, height*0, width*2/8, height*3/32);
   if (pageChange == 1) {
     Text_Setup(Edmonton, selectionText, height, 0, CENTER, CENTER, width*0, height*1/8, titleWidth, titleHeight);
     Text_Setup(Calgary, selectionText, height, 0, CENTER, CENTER, width*0, height*2/8, titleWidth, titleHeight);
-    Text_Setup(page1, selectionText, height, 0, CENTER, CENTER, width*3/8, height*14/16, width*1/8, height*1/8);
   }
   if (pageChange == 2) {
     Text_Setup(newMexico, selectionText, height, 0, CENTER, CENTER, width*0, height*1/8, titleWidth, titleHeight);
     Text_Setup(Florida, selectionText, height, 0, CENTER, CENTER, width*0, height*2/8, titleWidth, titleHeight);
-    Text_Setup(page2, selectionText, height, 0, CENTER, CENTER, width*3/8, height*14/16, width*1/8, height*1/8);
-  }
-  if (pageChange == 3) {
-    Text_Setup(page3, selectionText, height, 0, CENTER, CENTER, width*3/8, height*14/16, width*1/8, height*1/8);
   }
 }
 
@@ -96,5 +83,34 @@ void pageHighlight() {
     rect(width*0, height*0, width*3/8, height*1/8);
   } else {
     noFill();
+  }
+}
+
+void arrowBlock() {
+  if (pageChange == 1) {
+    stroke(stopRed);
+    strokeWeight(4);
+    noFill();
+    ellipse(90, 40, 50, 50);
+    line(70, 20, 110, 60);
+  }
+  if (pageChange == 3) {
+    stroke(stopRed);
+    strokeWeight(4);
+    noFill();
+    ellipse(90, 565, 50, 50);
+    line(70, 545, 112, 580);
+  }
+}
+
+void pageTurn() {
+  if (mouseX > width*0 && mouseX < width*3/8 && mouseY > height*7/8 && mouseY < height*1 && pageChange < 3) {
+    if (pageChange != 2);
+    pageChange = pageChange + 1;
+  }
+  if (mouseX > width*0 && mouseX < width*3/8 && mouseY > height*0 && mouseY < height*1/8 && pageChange < 4) {
+    if (pageChange != 1){
+    pageChange = pageChange - 1;
+    }
   }
 }
