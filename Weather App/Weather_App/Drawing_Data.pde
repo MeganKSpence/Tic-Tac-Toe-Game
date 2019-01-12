@@ -1,6 +1,9 @@
 //Global Variables
 int drawData = 0; 
 
+String celcius = "°C";
+String fahrenheit = "°F";
+
 void drawingDataHighlight() {
   if (mouseX > width*0 && mouseX < width*3/8 && mouseY > height*1/8 && mouseY < height*2/8) {
     fill(highlight);
@@ -44,7 +47,7 @@ void mouseClickedData() {
   if (pageChange == 1) {
     if (mouseX > width*0 && mouseX < width*3/8 && mouseY > height*1/8 && mouseY < height*2/8) {
       drawData = 1;
-      forcastEnable = true; 
+      forcastEnable = true;
     } 
     if (mouseX > width*0 && mouseX < width*3/8 && mouseY > height*2/8 && mouseY < height*3/8) {
       drawData = 2;
@@ -65,14 +68,30 @@ void mouseClickedData() {
 }
 
 void drawingData() {
-  unwrappingData();
-  println(tempED);
-  println(tempEdmonton);
   if (pageChange == 1) {
-    if (drawData == 1) {
+    if (drawData == 1 && forcastChange == false) {
+      //Temperature
+      JSONObject main = jsonCurrentEdmonton.getJSONObject("main"); //Unwrap {}
+      float tempEdmonton = main.getFloat("temp");
+      float Fcalc = tempEdmonton * 9/5 + 32;
+      String tempF = nf(Fcalc, 0, 2);
+      String tempCel = str(tempEdmonton);
+      //Description of the weather outside
+      JSONArray weather = jsonCurrentEdmonton.getJSONArray("weather"); // Unwrap []
+      JSONObject all = weather.getJSONObject(0); //Unwrap {}
+      String descriptionEd = all.getString("description");
+      //Image
+      JSONObject imageGet = jsonCurrentEdmonton.getJSONObject("weather");
+      JSONObject all2 = imageGet.getJSONObject(0);
+      JSONObject imageEd = all2.loadJSONObject();
+      
+
       fill(highlight);
       rect(width*0, height*1/8, width*3/8, height*1/8);
-      Text_Setup(tempED, selectionText, height, 0, CENTER, CENTER, width*0, height*0, width*1/2, height*1/2);
+      Text_Setup(tempCel + celcius, selectionText, height, 0, CENTER, CENTER, width*3/8, height*5/8, width*5/8, height*1/8);
+      Text_Setup(tempF + fahrenheit, selectionText, height, 0, CENTER, CENTER, width*3/8, height*11/16, width*5/8, height*1/8);
+      Text_Setup(Edmonton, selectionText, height, 0, CENTER, CENTER, width*3/8, height*3/32, width*5/8, height*1/8);
+      Text_Setup(descriptionEd, selectionText, height, 0, CENTER, CENTER, width*3/8, height*5/32, width*5/8, height*1/8);
     } 
     if (drawData == 2) {
       fill(highlight);

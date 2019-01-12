@@ -4,9 +4,6 @@ JSONObject jsonForecastEdmonton;
 
 import java.util.Date; 
 
-float tempEdmonton;
-String tempED = str(tempEdmonton);
-
 void buildingURL() {
   String baseURL_Current = "http://api.openweathermap.org/data/2.5/weather?";
   String baseURL_Forecast = "http://api.openweathermap.org/data/2.5/forecast?";
@@ -24,7 +21,6 @@ void buildingURL() {
   jsonCurrentEdmonton = loadJSONObject(URLCurrentEdmonton); //Must be Global Variable
   jsonForecastEdmonton = loadJSONObject(URLForecastEdmonton);
 }
-
 void unwrappingData() {
   //Edmonton
   long dt = jsonCurrentEdmonton.getInt("dt"); //must be 64-bit value, not 32-bit
@@ -32,17 +28,12 @@ void unwrappingData() {
   println(dateHuman);
 
   JSONObject main = jsonCurrentEdmonton.getJSONObject("main"); //Unwrap {}
-  tempEdmonton = main.getFloat("temp");
+  float tempEdmonton = main.getFloat("temp");
   //println(tempEdmonton);
   //String tempED = str(tempEdmonton);
-  println(tempED);
+  //println(tempED);
   //return tempED;
   //return tempEdmonton;
-
-  JSONArray weather = jsonCurrentEdmonton.getJSONArray("weather"); // Unwrap []
-  JSONObject all = weather.getJSONObject(0); //Unwrap {}
-  String description = all.getString("description");
-  println (description);
 }
 
 void TurningString() {
