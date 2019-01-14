@@ -1,5 +1,5 @@
 //Global Variables
-color backgroundBlue = #7CDBFF; //Used in gradient
+color backgroundBlue = #88B5FA; //Used in gradient
 color white = #FFFFFF;
 color highlight = #B5E1F2;
 color stopRed = #F01124;

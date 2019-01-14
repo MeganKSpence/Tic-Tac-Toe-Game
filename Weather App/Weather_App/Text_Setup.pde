@@ -42,7 +42,7 @@ void Text_Setup(String string, PFont font, float height, color ink, int alignHor
 
   //Reference to Text Calculator
   if (string.length() >= 13) { //Number changes depending on geometry ratio (width/height)
-    fontSize = textCalculator(height, string, titleWidth);
+    fontSize = textCalculator(height, string, titleWidth) * 2;
   } else if (string.length() >= 4) {
     // catch for string less than 13 characters
     fontSize = fontSize * 0.04; //change number as needed
@@ -72,6 +72,8 @@ void Text() {
   if (pageChange == 1) {
     Text_Setup(Edmonton, selectionText, height, 0, CENTER, CENTER, width*0, height*1/8, titleWidth, titleHeight);
     Text_Setup(Calgary, selectionText, height, 0, CENTER, CENTER, width*0, height*2/8, titleWidth, titleHeight);
+    Text_Setup(newMexico, selectionText, height, 0, CENTER, CENTER, width*0, height*3/8, titleWidth, titleHeight);
+    Text_Setup(Florida, selectionText, height, 0, CENTER, CENTER, width*0, height*4/8, titleWidth, titleHeight);
     Text_Setup(page1, selectionText, height, 0, CENTER, CENTER, width*3/8, height*14/16, width*1/8, height*1/8);
   }
   if (pageChange == 2) {

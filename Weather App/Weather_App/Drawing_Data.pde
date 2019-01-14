@@ -72,38 +72,78 @@ void drawingData() {
     if (drawData == 1 && forcastChange == false) {
       //Temperature
       JSONObject main = jsonCurrentEdmonton.getJSONObject("main"); //Unwrap {}
-      float tempEdmonton = main.getFloat("temp");
-      float Fcalc = tempEdmonton * 9/5 + 32;
+      float temp = main.getFloat("temp");
+      float Fcalc = temp * 9/5 + 32;
       String tempF = nf(Fcalc, 0, 2);
-      String tempCel = str(tempEdmonton);
+      String tempCel = str(temp);
       //Description of the weather outside
       JSONArray weather = jsonCurrentEdmonton.getJSONArray("weather"); // Unwrap []
       JSONObject all = weather.getJSONObject(0); //Unwrap {}
-      String descriptionEd = all.getString("description");
+      String description = all.getString("description");
       //Image
-      JSONObject imageGet = jsonCurrentEdmonton.getJSONObject("weather");
-      JSONObject all2 = imageGet.getJSONObject(0);
-      JSONObject imageEd = all2.loadJSONObject();
-      
+     // JSONObject imageEd = all.loadJSONObject("icon");
+      //image(imageEd, 0, 0);
 
       fill(highlight);
       rect(width*0, height*1/8, width*3/8, height*1/8);
       Text_Setup(tempCel + celcius, selectionText, height, 0, CENTER, CENTER, width*3/8, height*5/8, width*5/8, height*1/8);
       Text_Setup(tempF + fahrenheit, selectionText, height, 0, CENTER, CENTER, width*3/8, height*11/16, width*5/8, height*1/8);
       Text_Setup(Edmonton, selectionText, height, 0, CENTER, CENTER, width*3/8, height*3/32, width*5/8, height*1/8);
-      Text_Setup(descriptionEd, selectionText, height, 0, CENTER, CENTER, width*3/8, height*5/32, width*5/8, height*1/8);
+      Text_Setup(description, selectionText, height, 0, CENTER, CENTER, width*3/8, height*5/32, width*5/8, height*1/8);
     } 
-    if (drawData == 2) {
+    if (drawData == 2 && forcastChange == false) {
+      JSONObject main = jsonCurrentCalgary.getJSONObject("main");
+      float temp = main.getFloat("temp");
+      float Fcalc = temp * 9/5 + 32;
+      String tempF = nf(Fcalc, 0, 2);
+      String tempCel = str(temp);
+      JSONArray weather = jsonCurrentCalgary.getJSONArray("weather");
+      JSONObject all = weather.getJSONObject(0);
+      String description = all.getString("description");
+      
       fill(highlight);
       rect(width*0, height*2/8, width*3/8, height*1/8);
+      Text_Setup(tempCel + celcius, selectionText, height, 0, CENTER, CENTER, width*3/8, height*5/8, width*5/8, height*1/8);
+      Text_Setup(tempF + fahrenheit, selectionText, height, 0, CENTER, CENTER, width*3/8, height*11/16, width*5/8, height*1/8);
+      Text_Setup(Calgary, selectionText, height, 0, CENTER, CENTER, width*3/8, height*3/32, width*5/8, height*1/8);
+      Text_Setup(description, selectionText, height, 0, CENTER, CENTER, width*3/8, height*5/32, width*5/8, height*1/8);
     }
     if (drawData == 3) {
+      JSONObject main = jsonCurrentnewMex.getJSONObject("main"); //Unwrap {}
+      float temp = main.getFloat("temp");
+      float Fcalc = temp * 9/5 + 32;
+      String tempF = nf(Fcalc, 0, 2);
+      String tempCel = str(temp);
+      //Description of the weather outside
+      JSONArray weather = jsonCurrentnewMex.getJSONArray("weather"); // Unwrap []
+      JSONObject all = weather.getJSONObject(0); //Unwrap {}
+      String description = all.getString("description");
+      //Image
+     // JSONObject imageEd = all.loadJSONObject("icon");
+      //image(imageEd, 0, 0);
       fill(highlight);
       rect(width*0, height*3/8, width*3/8, height*1/8);
+      Text_Setup(tempCel + celcius, selectionText, height, 0, CENTER, CENTER, width*3/8, height*5/8, width*5/8, height*1/8);
+      Text_Setup(tempF + fahrenheit, selectionText, height, 0, CENTER, CENTER, width*3/8, height*11/16, width*5/8, height*1/8);
+      Text_Setup(newMexico, selectionText, height, 0, CENTER, CENTER, width*3/8, height*3/32, width*5/8, height*1/8);
+      Text_Setup(description, selectionText, height, 0, CENTER, CENTER, width*3/8, height*5/32, width*5/8, height*1/8);
     }
     if (drawData == 4) {
+      JSONObject main = jsonCurrentFlorida.getJSONObject("main"); //Unwrap {}
+      float temp = main.getFloat("temp");
+      float Fcalc = temp * 9/5 + 32;
+      String tempF = nf(Fcalc, 0, 2);
+      String tempCel = str(temp);
+      //Description of the weather outside
+      JSONArray weather = jsonCurrentFlorida.getJSONArray("weather"); // Unwrap []
+      JSONObject all = weather.getJSONObject(0); //Unwrap {}
+      String description = all.getString("description");
       fill(highlight);
       rect(width*0, height*4/8, width*3/8, height*1/8);
+      Text_Setup(tempCel + celcius, selectionText, height, 0, CENTER, CENTER, width*3/8, height*5/8, width*5/8, height*1/8);
+      Text_Setup(tempF + fahrenheit, selectionText, height, 0, CENTER, CENTER, width*3/8, height*11/16, width*5/8, height*1/8);
+      Text_Setup(Florida, selectionText, height, 0, CENTER, CENTER, width*3/8, height*3/32, width*5/8, height*1/8);
+      Text_Setup(description, selectionText, height, 0, CENTER, CENTER, width*3/8, height*5/32, width*5/8, height*1/8);
     }
     if (drawData == 5) {
       fill(highlight);
