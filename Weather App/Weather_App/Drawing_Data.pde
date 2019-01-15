@@ -137,16 +137,19 @@ void drawingData() {
         String description = all.getString("description");
         //Date
         long dt = jsonCurrentEdmonton.getInt("dt"); //must be 64-bit value, not 32-bit
-        Date dateHuman = new Date(dt*1000);
+        //Date dateHuman = new Date(dt*1000);
         int date = int(dt);
-        println(date);
-        println(dt);
+        Date dateHuman = new Date(date*1000);
+        println(date, "Hi");
+        println(dt, "Dude?");
+        println(dateHuman);
+        String datePrint = str(dateHuman);
 
         Text_Setup(tempCel + celcius, selectionText, height, 0, CENTER, CENTER, width*3/8, height*5/8, width*5/8, height*1/8);
         Text_Setup(tempF + fahrenheit, selectionText, height, 0, CENTER, CENTER, width*3/8, height*11/16, width*5/8, height*1/8);
         Text_Setup(Florida, selectionText, height, 0, CENTER, CENTER, width*3/8, height*3/32, width*5/8, height*1/8);
         Text_Setup(description, selectionText, height, 0, CENTER, CENTER, width*3/8, height*5/32, width*5/8, height*1/8);
-    //    Text_Setup(dateHuman, selectionText, height, 0, CENTER, CENTER, width*1/2, height*1/2, width*1/8, height*1/8);
+        Text_Setup(dateHuman, selectionText, height, 0, CENTER, CENTER, width*3/8, height*5/32, width*5/8, height*1/8);
       }
     }
     if (drawData == 5) {
