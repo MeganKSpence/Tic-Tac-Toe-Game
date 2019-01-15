@@ -22,7 +22,7 @@ void Fonts () {
 void variables() {
   Exit = "Exit";
   Forcast = "See Forcast";
-  Current = "Current Weather";
+  Current = "See Current Weather";
   page1 = "Page 1/3";
   page2 = "Page 2/3";
   page3 = "Page 3/3";
@@ -42,12 +42,10 @@ void Text_Setup(String string, PFont font, float height, color ink, int alignHor
 
   //Reference to Text Calculator
   if (string.length() >= 13) { //Number changes depending on geometry ratio (width/height)
-    fontSize = textCalculator(height, string, titleWidth) * 2;
-  } else if (string.length() >= 4) {
+    fontSize = textCalculator(height, string, titleWidth) * 1.6;
+  } else if (string.length() >= 0) {
     // catch for string less than 13 characters
     fontSize = fontSize * 0.04; //change number as needed
-  } else {
-    fontSize = fontSize * 0.16;
   } 
 
   textFont(font, fontSize);
@@ -77,8 +75,6 @@ void Text() {
     Text_Setup(page1, selectionText, height, 0, CENTER, CENTER, width*3/8, height*14/16, width*1/8, height*1/8);
   }
   if (pageChange == 2) {
-    Text_Setup(newMexico, selectionText, height, 0, CENTER, CENTER, width*0, height*1/8, titleWidth, titleHeight);
-    Text_Setup(Florida, selectionText, height, 0, CENTER, CENTER, width*0, height*2/8, titleWidth, titleHeight);
     Text_Setup(page2, selectionText, height, 0, CENTER, CENTER, width*3/8, height*14/16, width*1/8, height*1/8);
   }
   if (pageChange == 3) {

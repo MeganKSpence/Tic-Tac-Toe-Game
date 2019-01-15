@@ -6,7 +6,6 @@ color stopRed = #F01124;
 
 int pageChange = 1;
 
-boolean forcastEnable = false;
 boolean currentChange = false;
 boolean forcastChange = false;
 
@@ -57,7 +56,7 @@ void quitButtonExit() {
 }
 
 void currentVSForcast() { //will change forcast to current and vise versa
-  if (forcastEnable == true) {
+  if (drawData != 0) {
     if (forcastChange == true) {
       Text_Setup(Current, selectionText, height, 0, CENTER, CENTER, width*3/8, height*0, width*3/8, height*3/32);
     } else if (forcastChange == false) {
@@ -68,7 +67,7 @@ void currentVSForcast() { //will change forcast to current and vise versa
 
 void changeForcastHighlight() { 
   if (mouseX > width*3/8 && mouseX < width*6/8 && mouseY > height*0 && mouseY < height*3/32) {
-    if (forcastEnable == true) {
+    if (drawData != 0) {
       fill(highlight);
       rect(width*3/8, height*0, width*3/8, height*3/32);
     }
@@ -77,7 +76,7 @@ void changeForcastHighlight() {
 
 void changeForcast() {
   if (mouseX > width*3/8 && mouseX < width*6/8 && mouseY > height*0 && mouseY < height*3/32) {
-    if (forcastEnable == true) {
+    if (drawData != 0) {
       if (forcastChange == true) {
         forcastChange = false;
       } else if (forcastChange == false) {

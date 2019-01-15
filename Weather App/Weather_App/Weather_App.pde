@@ -4,7 +4,6 @@ void setup() {
   size(500, 600);
   //fullScreen();
   buildingURL();
-  unwrappingData();
   Fonts();
   variables();
 }
@@ -21,7 +20,6 @@ void draw() {
   arrowBlock();
   currentVSForcast();
   Text();
-  unwrappingData();
 }
 
 void mouseClicked() {
