@@ -4,6 +4,17 @@ int drawData = 0;
 String celcius = "°C";
 String fahrenheit = "°F";
 
+//Date for all
+int month = month();
+int day = day();
+int hour = hour();
+int min = minute();
+String d = str(day);
+String h = str(hour);
+String mi = str(min);
+String m;
+
+
 void drawingDataHighlight() {
   if (mouseX > width*0 && mouseX < width*3/8 && mouseY > height*1/8 && mouseY < height*2/8) {
     fill(highlight);
@@ -57,6 +68,14 @@ void mouseClickedData() {
 }
 
 void drawingData() {
+  if (month == 1) {
+    m = "January";
+  }
+  for (int i = 1; i < 10; i++) {
+    if (min == i) {
+      mi = "0" + i;
+    }
+  }
   if (pageChange == 1) {
     if (drawData == 1) {
       fill(highlight);
@@ -76,7 +95,9 @@ void drawingData() {
         Text_Setup(tempCel + celcius, selectionText, height, 0, CENTER, CENTER, width*3/8, height*5/8, width*5/8, height*1/8);
         Text_Setup(tempF + fahrenheit, selectionText, height, 0, CENTER, CENTER, width*3/8, height*11/16, width*5/8, height*1/8);
         Text_Setup(Edmonton, selectionText, height, 0, CENTER, CENTER, width*3/8, height*3/32, width*5/8, height*1/8);
-        Text_Setup(description, selectionText, height, 0, CENTER, CENTER, width*3/8, height*5/32, width*5/8, height*1/8);
+        Text_Setup(description, selectionText, height, 0, CENTER, CENTER, width*3/8, height*7/32, width*5/8, height*1/8);
+        Text_Setup(m + " " + d + "th", selectionText, height, 0, CENTER, CENTER, width*3/8, height*26/32, width*5/8, height*1/8);
+        Text_Setup(h + ":" + mi, selectionText, height, 0, CENTER, CENTER, width*3/8, height*28/32, width*5/8, height*1/8);
       }
     }
     if (drawData == 2) {
@@ -135,21 +156,11 @@ void drawingData() {
         JSONArray weather = jsonCurrentFlorida.getJSONArray("weather"); 
         JSONObject all = weather.getJSONObject(0); 
         String description = all.getString("description");
-        //Date
-        long dt = jsonCurrentEdmonton.getInt("dt"); //must be 64-bit value, not 32-bit
-        //Date dateHuman = new Date(dt*1000);
-        int date = int(dt);
-        Date dateHuman = new Date(date*1000);
-        println(date, "Hi");
-        println(dt, "Dude?");
-        println(dateHuman);
-        String datePrint = str(dateHuman);
 
         Text_Setup(tempCel + celcius, selectionText, height, 0, CENTER, CENTER, width*3/8, height*5/8, width*5/8, height*1/8);
         Text_Setup(tempF + fahrenheit, selectionText, height, 0, CENTER, CENTER, width*3/8, height*11/16, width*5/8, height*1/8);
         Text_Setup(Florida, selectionText, height, 0, CENTER, CENTER, width*3/8, height*3/32, width*5/8, height*1/8);
         Text_Setup(description, selectionText, height, 0, CENTER, CENTER, width*3/8, height*5/32, width*5/8, height*1/8);
-        Text_Setup(dateHuman, selectionText, height, 0, CENTER, CENTER, width*3/8, height*5/32, width*5/8, height*1/8);
       }
     }
     if (drawData == 5) {
