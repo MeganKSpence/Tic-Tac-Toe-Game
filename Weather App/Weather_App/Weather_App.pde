@@ -3,6 +3,7 @@
 void setup() {
   size(500, 600);
   //fullScreen();
+  displayChecker();
   buildingURL();
   Fonts();
   variables();

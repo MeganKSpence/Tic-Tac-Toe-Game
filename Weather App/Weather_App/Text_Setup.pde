@@ -1,4 +1,4 @@
-//Varables
+//Global Variables
 float titleWidth;
 float titleHeight; 
 

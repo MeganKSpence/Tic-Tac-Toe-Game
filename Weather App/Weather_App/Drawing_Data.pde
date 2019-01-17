@@ -13,6 +13,9 @@ String d = str(day);
 String h = str(hour);
 String mi = str(min);
 String m;
+String time;
+
+PImage Ed;
 
 
 void drawingDataHighlight() {
@@ -70,12 +73,67 @@ void mouseClickedData() {
 void drawingData() {
   if (month == 1) {
     m = "January";
+  } else if (month == 2) {
+    m = "Feburuary";
+  } else if (month == 3) {
+    m = "March";
+  } else if (month == 4) {
+    m = "April";
+  } else if (month == 5) {
+    m = "May";
+  } else if (month == 6) {
+    m = "June";
+  } else if (month == 7) {
+    m = "July";
+  } else if (month == 8) {
+    m = "August";
+  } else if (month == 9) {
+    m = "September";
+  } else if (month == 10) {
+    m = "October";
+  } else if (month == 11) {
+    m = "November";
+  } else if (month == 12) {
+    m = "December";
   }
+
   for (int i = 1; i < 10; i++) {
     if (min == i) {
       mi = "0" + i;
     }
   }
+
+  if (hour < 13) {
+    time = "AM";
+  } else if (hour > 12) {
+    time = "PM";
+    if (hour == 13) {
+      h = "1";
+    } else if (hour == 14) {
+      h = "2";
+    } else if (hour == 15) {
+      h = "3";
+    } else if (hour == 16) {
+      h = "4";
+    } else if (hour == 17) {
+      h = "5";
+    } else if (hour == 18) {
+      h = "6";
+    } else if (hour == 19) {
+      h = "7";
+    } else if (hour == 20) {
+      h = "8";
+    } else if (hour == 21) {
+      h = "9";
+    } else if (hour == 22) {
+      h = "10";
+    } else if (hour == 23) {
+      h = "11";
+    } else if (hour == 24) {
+      h = "12";
+    }
+  }
+
   if (pageChange == 1) {
     if (drawData == 1) {
       fill(highlight);
@@ -91,13 +149,16 @@ void drawingData() {
         JSONArray weather = jsonCurrentEdmonton.getJSONArray("weather"); // Unwrap []
         JSONObject all = weather.getJSONObject(0); //Unwrap {}
         String description = all.getString("description");
+        //Image
+        JSONObject image = loadJSONObject("icon");
+        
 
         Text_Setup(tempCel + celcius, selectionText, height, 0, CENTER, CENTER, width*3/8, height*5/8, width*5/8, height*1/8);
         Text_Setup(tempF + fahrenheit, selectionText, height, 0, CENTER, CENTER, width*3/8, height*11/16, width*5/8, height*1/8);
         Text_Setup(Edmonton, selectionText, height, 0, CENTER, CENTER, width*3/8, height*3/32, width*5/8, height*1/8);
-        Text_Setup(description, selectionText, height, 0, CENTER, CENTER, width*3/8, height*7/32, width*5/8, height*1/8);
+        Text_Setup(description, selectionText, height, 0, CENTER, CENTER, width*3/8, height*5/32, width*5/8, height*1/8);
         Text_Setup(m + " " + d + "th", selectionText, height, 0, CENTER, CENTER, width*3/8, height*26/32, width*5/8, height*1/8);
-        Text_Setup(h + ":" + mi, selectionText, height, 0, CENTER, CENTER, width*3/8, height*28/32, width*5/8, height*1/8);
+        Text_Setup(h + ":" + mi + " " + time, selectionText, height, 0, CENTER, CENTER, width*3/8, height*28/32, width*5/8, height*1/8);
       }
     }
     if (drawData == 2) {
@@ -119,6 +180,8 @@ void drawingData() {
         Text_Setup(tempF + fahrenheit, selectionText, height, 0, CENTER, CENTER, width*3/8, height*11/16, width*5/8, height*1/8);
         Text_Setup(Calgary, selectionText, height, 0, CENTER, CENTER, width*3/8, height*3/32, width*5/8, height*1/8);
         Text_Setup(description, selectionText, height, 0, CENTER, CENTER, width*3/8, height*5/32, width*5/8, height*1/8);
+        Text_Setup(m + " " + d + "th", selectionText, height, 0, CENTER, CENTER, width*3/8, height*26/32, width*5/8, height*1/8);
+        Text_Setup(h + ":" + mi + " " + time, selectionText, height, 0, CENTER, CENTER, width*3/8, height*28/32, width*5/8, height*1/8);
       }
     }
     if (drawData == 3) {
@@ -140,6 +203,8 @@ void drawingData() {
         Text_Setup(tempF + fahrenheit, selectionText, height, 0, CENTER, CENTER, width*3/8, height*11/16, width*5/8, height*1/8);
         Text_Setup(newMexico, selectionText, height, 0, CENTER, CENTER, width*3/8, height*3/32, width*5/8, height*1/8);
         Text_Setup(description, selectionText, height, 0, CENTER, CENTER, width*3/8, height*5/32, width*5/8, height*1/8);
+        Text_Setup(m + " " + d + "th", selectionText, height, 0, CENTER, CENTER, width*3/8, height*26/32, width*5/8, height*1/8);
+        Text_Setup(h + ":" + mi + " " + time, selectionText, height, 0, CENTER, CENTER, width*3/8, height*28/32, width*5/8, height*1/8);
       }
     }
     if (drawData == 4) { //Florida
@@ -161,6 +226,8 @@ void drawingData() {
         Text_Setup(tempF + fahrenheit, selectionText, height, 0, CENTER, CENTER, width*3/8, height*11/16, width*5/8, height*1/8);
         Text_Setup(Florida, selectionText, height, 0, CENTER, CENTER, width*3/8, height*3/32, width*5/8, height*1/8);
         Text_Setup(description, selectionText, height, 0, CENTER, CENTER, width*3/8, height*5/32, width*5/8, height*1/8);
+        Text_Setup(m + " " + d + "th", selectionText, height, 0, CENTER, CENTER, width*3/8, height*26/32, width*5/8, height*1/8);
+        Text_Setup(h + ":" + mi + " " + time, selectionText, height, 0, CENTER, CENTER, width*3/8, height*28/32, width*5/8, height*1/8);
       }
     }
     if (drawData == 5) {
