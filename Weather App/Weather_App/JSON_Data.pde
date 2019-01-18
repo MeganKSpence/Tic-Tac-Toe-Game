@@ -5,6 +5,8 @@ JSONObject jsonCurrentCalgary;
 JSONObject jsonCurrentnewMex;
 JSONObject jsonCurrentFlorida;
 
+PImage imageEd;
+
 import java.util.Date; 
 //http://api.openweathermap.org/data/2.5/weather?id=5946768&APPID=6ae57189002ecfea2e94bc2e5de730ff&mode=json&units=metric
 void buildingURL() {
@@ -30,4 +32,19 @@ void buildingURL() {
   jsonCurrentCalgary = loadJSONObject(URLCurrentCalgary);
   jsonCurrentnewMex = loadJSONObject(URLCurrentnewMex);
   jsonCurrentFlorida = loadJSONObject(URLCurrentFlorida);
+}
+
+void buildingImageURL() {
+  String baseURL_Image = "http://openweathermap.org/img/w/";
+  String baseURL_Ending = ".png";
+  
+  //getting the images
+/*  JSONArray weather = jsonCurrentEdmonton.getJSONArray("weather"); // Unwrap []
+  JSONObject all = weather.getJSONObject(0); //Unwrap {}
+  String imageEd = all.getString("icon");
+
+  String URL_ImageEd = baseURL_Image + imageEd + baseURL_Ending;
+  
+  println(URL_ImageEd);
+  imageEd = loadImage(URL_ImageEd); */
 }

@@ -21,6 +21,7 @@ void draw() {
   arrowBlock();
   currentVSForcast();
   Text();
+  buildingImageURL();
 }
 
 void mouseClicked() {

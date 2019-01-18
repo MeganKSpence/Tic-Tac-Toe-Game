@@ -150,7 +150,6 @@ void drawingData() {
         JSONObject all = weather.getJSONObject(0); //Unwrap {}
         String description = all.getString("description");
         //Image
-        JSONObject image = loadJSONObject("icon");
         
 
         Text_Setup(tempCel + celcius, selectionText, height, 0, CENTER, CENTER, width*3/8, height*5/8, width*5/8, height*1/8);
@@ -159,6 +158,19 @@ void drawingData() {
         Text_Setup(description, selectionText, height, 0, CENTER, CENTER, width*3/8, height*5/32, width*5/8, height*1/8);
         Text_Setup(m + " " + d + "th", selectionText, height, 0, CENTER, CENTER, width*3/8, height*26/32, width*5/8, height*1/8);
         Text_Setup(h + ":" + mi + " " + time, selectionText, height, 0, CENTER, CENTER, width*3/8, height*28/32, width*5/8, height*1/8);
+      }
+      if (forcastChange == true) {
+        //Temperature
+        JSONObject dt = loadJSONObject("dt");
+        JSONObject main = jsonForecastEdmonton.getJSONObject("main");
+        float temp = main.getFloat("temp");
+        float Fcalc = temp * 9/5 + 32;
+        String tempF = nf(Fcalc, 0, 2);
+        String tempCel = str(temp);
+        
+        Text_Setup(tempCel + celcius, selectionText, height, 0, CENTER, CENTER, width*3/8, height*5/8, width*5/8, height*1/8);
+        Text_Setup(tempF + fahrenheit, selectionText, height, 0, CENTER, CENTER, width*3/8, height*11/16, width*5/8, height*1/8);
+        println(dt);
       }
     }
     if (drawData == 2) {
